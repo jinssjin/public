@@ -30,6 +30,8 @@ $(function(){
     var b3 = $(".s3_title p").offset().top; //내용
     var b4 = $(".s3_table li").offset().top; //내용
 
+    var c1 = $(".s4_table li").offset().top;
+
 
     var d1 = $("#s5").offset().top;
     var d2 = $("#s6").offset().top;
@@ -84,6 +86,20 @@ $(function(){
             setTimeout(function(){
                 $(".s3_table li").eq(4).addClass('slide');
             },1200);
+        }
+
+        if(c1 <= sct+700){
+            $('.s4_table li').eq(0).addClass('slide');
+            setTimeout(function(){
+                $('.s4_table li').eq(1).addClass('slide');
+            },300)
+            setTimeout(function(){
+                $('.s4_table li').eq(2).addClass('slide');
+            },600)
+            setTimeout(function(){
+                $('.s4_table li').eq(3).addClass('slide');
+            },900);
+
         }
 
         if(d1 <= sct+700){

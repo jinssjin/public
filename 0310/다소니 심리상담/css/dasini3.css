@@ -479,6 +479,14 @@ header .gnb{
     border: 1px solid #fff;
 }
 
+.s4_table li{
+    visibility: hidden;
+}
+
+.s4_table li.slide{
+    animation: slide 1s;
+    visibility: visible;
+}
 
 /* s5 */
 
