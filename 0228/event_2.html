@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <div id="change" onclick="dd"> -->
+    <div id="change">
+        글자색 바꾸기
+    </div>
+
+    <p>Reprehenderit tempor do quis sunt eu et exercitation deserunt. Laboris adipisicing est sint aliquip nulla pariatur velit irure elit qui id. Dolore aliquip dolore eu ut irure sint Lorem reprehenderit velit. Duis veniam irure cillum anim excepteur culpa pariatur sunt esse. Eu nulla commodo velit ex id dolore incididunt mollit incididunt nisi labore culpa qui ea. Commodo veniam veniam in ipsum ad minim occaecat qui pariatur adipisicing laborum quis.</p>
+
+    <script>
+        // 방법1 : 웹 요소를 변수로 저장 & 미리 만든 함수 사용
+        var changeBtn = document.querySelector('#change');
+
+        // changeBtn.onclick = changeColor; 함수를 불러주는 것
+        changeBtn.onclick = changeColor;
+        function changeColor(){
+            document.querySelector('p').style.color = "#F00";
+        }
+    
+    </script>
+</body>
+</html>

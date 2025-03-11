@@ -1,0 +1,42 @@
+a:link, a:visited {
+    color:black;
+    text-decoration: none;
+ }
+ ul {
+    list-style: none;
+    width:500px;
+    margin:10px auto;
+    padding:0;
+    /* height: 50px; */
+    /* display: flex; */
+    text-align:center;
+ }
+ li {
+    /* float: left;를 주려면 부모의 높이를 반드시 줘야함 */
+    display:inline-block;   /* 도형 간격에 틈이 있음 */
+    width:120px;
+    border:1px solid #ccc;
+    padding:10px 15px;   
+    font-size:16px;
+    text-align:center;
+ }
+
+li.on{
+    background-color: yellowgreen;
+    font-weight: bold;
+}
+
+
+
+ #result {
+    width:500px;
+    height:300px;
+    margin:30px auto;
+    border:2px solid #ccc;
+    border-radius:15px;
+ }
+ p {
+    width:80%;
+    padding:10px;
+    line-height: 2em;
+ }

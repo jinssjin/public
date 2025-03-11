@@ -1,0 +1,117 @@
+*{margin: 0; padding: 0;}
+
+ul,li{list-style: none;}
+
+a{color: #000; text-decoration: none;}
+
+#wrap{}
+
+#header_out{width: 100%;
+            position: relative;
+            z-index: 5;}
+
+            /* #header에 있던 position: relative;, z-index: 5;를 가져옴 */
+
+#header{width: 1200px;
+height: 250px;
+
+border: 1px solid #333;
+margin: 0 auto;
+}
+
+
+#logo{
+    position: absolute;
+    border: 2px solid #333;
+    width: 250px;
+    height: 90px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+#logo img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#nav_Icon{
+    float: left;
+    margin-top: 20px;
+    margin-left: 15px;
+    /* position: absolute;
+top: 20px;
+left: 15px; */
+
+/* 기존에 헤더안에서 놀던애들이 헤더아웃까지
+ 너비가 확장되어 포지션 기준점이 달라짐 */
+}
+
+#nav_Icon ul li{
+    float: left;
+    margin-left: 15px;
+}
+
+#gnb{
+    float: right;
+    margin-top: 20px;
+    margin-left: 15px;}
+
+#gnb ul li{
+    float: left;    
+    padding: 0 10px;
+    background: url(../images/bar.gif) no-repeat 100% 50%;
+}
+
+.gnb ul li:last-child{background: none;}
+
+.main_nav{
+    position: absolute;
+    width: 100%;
+    height: 30px;
+    top: 220px;
+    left: 0;
+    }
+
+.main_nav > ul {width: 1200px;
+margin: 0 auto;
+position: relative;
+z-index: 10;}
+
+.main_nav > ul > li{float: left;
+                    text-align: center;}
+
+.main_nav ul li a{display: block;
+                    width: 200px;
+                    height: 30px;
+                    line-height: 30px;}
+
+.main_nav ul li ul{background-color: rgba(0,0,255,0.7);
+                    position: absolute;
+                    height: 240px;
+                    padding: 10px 0;
+                    display: none;}
+
+.main_nav ul:hover li ul{display: block;}
+
+#main{
+    width: 1200px;
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+}
+
+.main_nav>ul:hover+ .shadow{
+    height: 260px;
+}
+/* hover해서 높이를 보이게 만듬 */
+
+.shadow{
+    width: 100%;
+    position: absolute;
+    top: 30px;
+    height: 0px;
+    background-color: rgba(255,0,0,0.5);
+}
+

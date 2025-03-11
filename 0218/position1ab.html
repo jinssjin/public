@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{height: 3000px;}
+        .box{width: 200px; height: 200px;}
+        .box1{background-color: aquamarine;}
+        .box2{background-color: burlywood;}
+        .box3{background-color: darkkhaki;
+                position: absolute;
+            right: 50px;
+        bottom: 50px;}
+                /* position: absolute 
+                1. 기분위치가 부모 ()- left, top, right, bottom 부모영역내에 어디든 위치
+                2. 자리값이 없음(겹침)
+                3. box3가 이동하면 box4는 box3가 있던 자리로 이동  */
+        .box4{background-color: violet;}
+        
+    </style>
+</head>
+<body>
+    <div class="box box1">박스1</div>
+    <div class="box box2">박스2</div>
+    <div class="box box3">박스3</div>
+    <div class="box box4">박스4</div>
+</body>
+</html>

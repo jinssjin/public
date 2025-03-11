@@ -1,0 +1,88 @@
+*{margin: 0;padding: 0;}
+ul,li{list-style: none;}
+a{text-decoration: none;
+color: #fff;font-weight: bold;
+z-index: 10;}
+.header_out{
+    height: 700px;
+    width: 100%;
+    background: url(../main2.jpg) no-repeat 50% 50% / cover;
+}
+
+header{
+    position: relative;
+    width: 100%;
+    height:70px;
+    
+}
+header> nav >ul{
+    width: 1000px;
+    height:70px;
+    position: relative;
+    margin: 0 auto;
+}
+header > nav > ul > li{
+   float: left;
+}
+
+header nav ul li a{
+    display: block;
+    width: 200px;
+    height: 70px;
+    line-height: 70px;
+    position: relative;
+    text-align: center;
+}
+
+header > nav > ul > li > ul > li > a{
+    display: none;
+    width: 200px;
+    height: 40px;
+    line-height: 70px;
+    position: relative;
+    text-align: center;
+    color: #fff;
+    font-weight: bolder;
+    font-size: 14px;
+    z-index: 10;
+}
+
+header nav ul:hover li ul li a{display: block;}
+
+header > nav > ul > li > a::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    transition: all 0.3s;
+    transform: scale(0,1);
+}
+
+header>nav>ul>li>a:hover::after{
+    transform: scale(1,1);}
+
+
+header nav .line {
+    position: absolute;
+    height: 1px;
+    width: 1400px;
+    top: 69px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background-color: #fff;
+    z-index: 10;
+}
+
+
+.shadow{
+    background-color: rgba(4 ,46, 111);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 0px;
+    transition: all 0.3s;}
+
+header nav ul:hover + .shadow{height: 400px;}

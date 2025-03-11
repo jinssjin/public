@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var str = "Hello, JavaScript!"
+        console.log(str.length)  // length는 ()를 안써주네
+
+        var str = "programming"
+        var char = "g"
+        var index = str.indexOf(char);
+        // console.log(index)
+        if(index !== -1) {
+            console.log(`문자 "${char}"는 ${index}번째 인덱스에 있습니다.`);
+        } else {
+            console.log(`문자 "${char}"는 문자열에 존재하지 않습니다.`);
+        }
+
+        var str = "programming"
+        console.log(str.indexOf('g') + "번째 인덱스에 있습니다.")
+        
+        var str = "javascript is fun"
+        console.log(str.toUpperCase())
+
+        var str = "I love JavaScript!"
+        console.log(str.includes("love"))
+
+        // if (str.includes(word)) {
+        //     console.log(`"${word}" 단어가 포함되어 있습니다.`);
+        //     } else {
+        //     console.log(`"${word}" 단어가 포함되지 않았습니다.`);
+        //     }
+
+        // 문제8 : 특정 문자 갯수 세기
+
+        var str = "banana";
+        var char = "a";
+        var count = str.split(char).length;
+        // console.log(count);
+        console.log(`"${char}"는 ${count}번 등장합니다.`);
+        
+        
+        // var str = "banana"
+        // console.log(str.length)
+
+        var str = "I love Python!"
+        console.log(str.replace("Python","JavaScript"))
+
+        var str = "apple banana orange"
+        var division = (str.split(" "))
+        console.log(division[0]+", "+division[1]+", "+division[2])
+        console.log(division)
+
+        // for문으로 배열 출력
+        for(var i=0; i <division.length;i++)
+        console.log(division[i]);
+        
+        division.forEach(function(item)){
+            console.log(item);
+        }
+
+    </script>
+
+문제 1: 문자열 길이 구하기
+사용자가 입력한 문자열을 받아 **문자 개수(길이)**를 출력하세요.
+"Hello, JavaScript!"
+문자열 길이: 18
+
+
+문제 2: 특정 문자 찾기 (indexOf)
+문자열: "programming"
+찾을 문자: "g"
+
+예시출력
+문자 "g"는 3번째 인덱스에 있습니다.
+
+문제 3: 문자열 대문자로 변환 (toUpperCase)
+사용자가 입력한 문자열을 대문자로 변환하세요.
+예시 입력
+"javascript is fun"
+예시 출력
+"JAVASCRIPT IS FUN"
+
+문제 4: 특정 단어 포함 여부 (includes)
+문자열에 특정 단어가 포함되어 있는지 확인하세요.
+예시 입력
+문자열: "I love JavaScript!"
+찾을 단어: "love"
+예시 출력
+"love" 단어가 포함되어 있습니다.
+
+
+문제 8: 특정 문자 개수 세기
+문자열에서 특정 문자가 몇 번 등장하는지 세어보세요.
+
+예시 입력
+
+문자열: "banana"
+찾을 문자: "a"
+예시 출력
+
+"a"는 3번 등장합니다.
+
+문제 9: 문자열 교체 (replace)
+문자열에서 특정 단어를 다른 단어로 변경하세요.
+
+예시 입력
+
+문자열: "I love Python!"
+바꿀 단어: "Python"
+새로운 단어: "JavaScript"
+예시 출력
+
+"I love JavaScript!"
+
+
+문제 10: 문자열을 배열로 변환 (split)
+사용자가 입력한 문자열을 공백 기준으로 배열로 변환하세요.
+
+예시 입력
+
+"apple banana orange"
+예시 출력
+
+["apple", "banana", "orange"]
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

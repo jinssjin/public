@@ -1,0 +1,95 @@
+*{margin: 0; padding: 0;}
+
+ul{list-style: none;}
+
+a{
+    text-decoration: none;
+    color: #000;
+    }
+    
+.cf::after{
+    content: "";
+    display: block;
+    clear: both;
+    }
+
+header{
+    width: 1920px;
+    height: 700px;
+    position: relative;
+    top: 0;
+    left: 0;
+    background:url(../images/main2.jpg) no-repeat 0 0 / cover;
+    }
+
+header nav{
+    position: absolute;
+    height: 70px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    text-align: center;
+}
+
+header > nav > ul > li{
+    /* 인라인요소로 바꿔서 중앙정렬하는 방법 */
+    /* display: inline;
+    vertical-align: top; */
+    float: left;
+}
+
+header > nav > ul{
+    position: relative;
+    width: 1000px;
+    height: 70px;
+    margin: 0 auto;
+    /* overflow: hidden; */
+    /* transition: all 0.3s; */
+}
+
+/* header > nav > ul:hover{
+    height: 270px;
+} */
+
+header nav ul li a{
+    /* a는 인라인 요소이기 때문에 넓이 높이를 가질 수 있다 */
+    display: block;
+    width: 200px;
+    height: 70px;
+    line-height: 70px;
+    color: #fff;
+    font-weight: bold;
+}
+
+header nav ul ul a{
+    height: 40px;
+    line-height: 40px
+};
+
+header nav ul li ul{
+    /* display: none; */
+    height: 0;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+header nav ul:hover li ul{
+    /* display: block; */
+    height: 200px;
+}
+
+
+header nav ul li a::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    left: 0;
+    bottom: 0;
+    background-color: #fff;
+    transform: scale(0,1);
+    transition: all 0.3s;
+}
+
+header nav ul li a:hover::after
+{transform: scale(1,1);}

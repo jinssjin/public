@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 배열(Array)은 여러 개의 값을 하나의 변수에 저장할 수 있는 객체입니다.
+
+        // Array 생성자 방식
+        var name1 = new Array();
+        name1[0] = "김부자";
+        name1[1] = "정현철";
+        name1[2] = "정주영";
+        name1[3] = "김민경";
+        name1[4] = "장영주";
+        document.write(name1[3]+"<br/>");
+
+        // 오늘의 요일 알아보기(배열)
+        var days = new Array("일","월","화","수","목","금","토");
+        var today = new Date();
+        // var d = today.getDay();
+        // alert(d);
+        // var yoil = days[d];
+        var yoil = days[today.getDay()];
+        // 오늘의 요일에 해당되는 값을 반환 일 :0 ~ 토:6
+        document.write(yoil+"요일 <br/>");  //오늘의 요일 반환
+
+        // 전체 재산의 합 구하기
+        var money = [100,100,200,50,70,90];
+        var theLen = money.lenght; //배열의 갯수를 구한다.
+        // alert(theLen);
+
+        var total = 0;
+        for(var i=0; i<theLen; i++){
+            total = total + money[i];
+        }
+        document.write(total);
+    </script>
+</body>
+</html>

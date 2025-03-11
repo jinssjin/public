@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+*{margin: 0; padding: 0;}
+.container{
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+header{background-color: cadetblue;
+        height: 100px;}
+    .img_slider{background-color: #ccc;
+                height: 300px;}
+header h1.logo{width: 200px;
+                height: 100px;
+                float: left;
+
+
+}
+header nav{width: 600px;
+    height: 50px;
+    background-color: yellow;
+    float: right;
+    margin-top: 40px;
+    margin-right: 10px;
+}
+
+header nav ul{list-style: none;
+}
+
+header nav ul li{float: left;
+}
+/* a태그는 인라인요소 이기 때문에 display : block을 통해 블록요소로 바꾸어준다 */
+header nav ul li a{width: 150px;
+    display: block;
+line-height: 50px;
+text-align: center;
+text-decoration: none;
+color: black;}
+
+header nav ul li a:hover{background-color: black;
+    color: #fff;}
+    
+
+section{background-color: burlywood;
+        height: 500px;}
+
+section article{width: 400px;
+                height: 300px;
+            float: left;}
+
+/* section의 아래(자식)인데 article이면서 notice인 것, .notice랑 동일, "article"과 ".notice"은 꼭 붙여쓸 것 */
+section article.notice{background-color: plum;}
+section article.banner{background-color: aqua;}
+section article.icons{background-color: violet;}
+
+footer{background-color: #333;
+height: 100px;
+color: #fff;}
+
+footer .foot_logo{width: 200px;
+    height: 100px;
+                background-color: indianred;
+            float: left;}
+footer .foot_right{width: 1000px;
+    height: 100px;
+background-color: lightblue;
+float: right;}
+
+.foot_menu{height: 50px;
+background-color: lightgreen;}
+
+.foot_copy{height: 50px;
+    background-color: orange;}
+    </style>
+</head>
+<body>
+    <!-- 시멘틱 태그 (Semantic Tag) -->
+     <div class="container">
+        <header>
+<h1 class="logo"><img src="images/logo.png" alt="로고"></h1>
+            <nav>
+                <ul>
+                    <li><a href="#">menu1</a></li>
+                    <li><a href="#">menu2</a></li>
+                    <li><a href="#">menu3</a></li>
+                    <li><a href="#">menu4</a></li>
+                </ul>
+            </nav>
+
+        </header>
+            <div class="img_slider"><img src="images/slide1.jpg" alt=""></div>
+        <section>
+            <article class="notice">공지사항</article>
+            <article class="banner">베너</article>
+            <article class="icons">아이콘툴</article>
+        </section>
+        <footer>
+            <div class="foot_logo"></div>
+            <div class="foot_right">
+                <div class="foot_menu">메뉴</div>
+                <div class="foot_copy">address</div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

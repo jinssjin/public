@@ -1,0 +1,22 @@
+*{margin: 0; padding: 0;}
+.section1{width: 100%; 
+            height: 200px; 
+            border: 1px solid black;}
+
+.section1 ul {list-style: none;}
+
+.section1 ul li{width: 25%;
+    height: 200px;
+    float: left;
+text-align: center;
+border-left: 1px solid #e5e5e5;
+box-sizing: border-box;}
+
+
+.section1 ul li img {padding-top: 10px ;}
+
+.section1 ul li p{color: #757575;}
+
+.section1 ul li a{color: #000;
+    display: inline-block;
+    margin-top: 10px ;}

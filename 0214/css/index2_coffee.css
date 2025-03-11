@@ -1,0 +1,43 @@
+/* 가로 900 세로 1000, 세로 300 100 500 100 */
+/* section 204 204 204 aside 114 96 84 footer 51 51 51 */
+*{margin: 0; padding: 0;}
+
+.wrap{width: 900px;height: 1000px; background-color: aqua; margin: 0 auto;}
+header{width: 900px; height: 300px; background-image: url(../images/images/top.jpg);
+        background-size: cover;}
+header h1{color: rgb(254 255 243);
+    float: right;
+            padding: 200px 20px 0 0;}
+
+nav{width: 900; height: 70px; background-color: rgb(42 29 10);}
+nav ul{list-style: none;}
+nav ul li{float: left;}
+
+nav ul li a{text-decoration: none;
+color: rgb(255 252 234);
+padding: 58px;
+font-weight: bold;
+line-height: 70px;}
+
+section{width: 650px; height: 560px;background-color: rgb(204 204 204); float: left;}
+
+section h3{width: 650px; text-align: center; padding-top: 20px;}
+
+section article{width: 270px; height: 200px; background-color: rgb(255 252 234);float: left;
+border: 1px solid black; margin: 30px 0 0 30px;
+padding: 10px 0 0 10px;}
+
+section article h4{ padding-left: 30px;
+    background-image: url(../images/images/kong.png); background-repeat: no-repeat;
+    }
+
+section article p{padding: 10px;}
+
+aside{width: 250px; height: 560px;background-color: rgb(114 96 84); float: left;}
+
+aside h3{color: black; padding-top: 10px; text-align: center;}
+
+aside img{width: 230px; padding: 10px;}
+
+footer{width: 900px; height: 70px;background-color: rgb(51 51 51); float: left;
+text-align: center; line-height: 70px; color: #fff;}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var x = 0;
+        var y = 0;
+        var z = 6;
+        var sum1 = 0;
+        var sum2 = 0;
+        while(x <= 5){
+            sum1 += x;
+            x++;
+        }
+// 1회전 sum1=0 x=1
+// 2회전 sum1=1 x=2
+// 3회전 sum1=3 x=3
+// 4회전 sum1=6 x=4
+// 5회전 sum1=10 x=5
+// 6회전 sum1=15 x=6
+
+        document.write("x: "+ sum1 + " x 값은" + x)
+
+
+        do{
+            sum2 += y
+            y++
+
+        }while(y <=5)
+        document.write(' y :' + sum2)
+
+        do{
+            z++
+
+        }while(z <=5)
+        document.write(' z :' + z)
+        // 초기값이 6이어도 do while문은 무조건 한번은 실행
+        // 가 7까지 증가 후 do while문을 빠져나간다.
+    </script>
+</body>
+</html>

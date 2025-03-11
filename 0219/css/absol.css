@@ -1,0 +1,103 @@
+*{margin: 0; padding: 0;}
+
+h2{
+    text-align: center;
+    /* 안여백 위 40 좌우 auto 아래 40 */
+    padding: 20px 0 0;}
+
+.bigbox{
+        position: relative;
+        width: 830px;
+        height: 310px;
+        border: 1px solid red;
+        /* 바깥여백 위 100 좌우 auto 아래 100 */
+        margin: 50px auto 0;}
+
+.box{
+    width: 200px;
+    height: 150px;
+    position: absolute;
+    display: none;
+}
+
+.box img{
+    display: block;
+    width: 100%;
+}
+
+.box1{display: block;
+        left: 0;
+        top: 0;}
+
+.box2{display: block;
+        top: 160px;
+        left: 0;}
+
+.box3{
+    display: block;
+    top: 0;
+    left: 210px;
+    width: 200px;
+    height: 310px;
+}
+
+.box4{
+    display: block;
+    top: 0;
+    left: 420px;
+}
+
+.box5{
+    display: block;
+    right: 0;
+    top: 0;}
+
+.box6{
+    display: block;
+    width: 410px;
+    height: 150px;
+    top: 160px;
+    right: 0;
+}
+
+.box::before{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 100%;
+    left: 0;
+    top: 0;
+background-color: rgb(0, 0, 225);}
+
+.box:hover::before{
+                    width: 100%;
+                    transition: all 1s;
+                
+                }
+
+                /* CSS를 다시써주면 나중에 적용된게 적용된다 */
+.box6::before{
+             width: 100%;
+             height: 0;
+}
+
+.box:hover::before{
+    height: 100%;
+    transition: all 0.01s;}
+
+.box1 p{position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        color: #fff;
+        padding-top: 30px;
+        box-sizing: border-box;
+        text-align: center;
+        /* repeat:no-repeat 50% 80% 마지막 백분율은 위치 */
+        background: url(../images/more.png) no-repeat 50% 80%;
+        transition: all 0.01s;
+        /* 불투명도 0 안보임 */
+        opacity: 0;}
+
+.box1:hover p{opacity:1 ;} /* 불투명도 1 보임 */

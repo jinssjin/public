@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+*{margin: 0; padding: 0;}
+nav{
+    width: 800px;
+    height: 70px;
+    background: yellow;
+    margin: 0 auto;
+    padding-top: 10px;}
+
+nav>ul{width: 600px;
+        height: 50px;
+    background-color: pink;
+    margin: 0 auto;
+list-style: none;}
+
+nav ul li{float: left;
+margin-left: 25px;}
+
+/* 첫번째 자식 밑에 있는 a에게 스타일을 적용한다 */
+nav ul li:nth-child(1) a{
+    border-radius: 25px;
+}
+
+nav ul li:nth-child(2) a{
+    border-top-left-radius: 25px;
+}
+
+nav ul li:nth-child(3) a{
+    border-top-right-radius: 25px;
+}
+
+nav ul li:nth-child(4) a{
+    /* 왼쪽 상단 오른쪽 상단 오른쪽 하단 왼쪽 하단 순서 */
+    border-radius: 0 0 25px 25px;
+}
+
+nav ul li a{width: 120px;
+height: 50px;
+line-height: 50px;
+text-align: center;
+color: #fff;
+text-decoration: none;
+display: block;
+background-color: blueviolet;
+}
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">회사소개</a></li>
+            <li><a href="#">제품소개</a></li>
+            <li><a href="#">커뮤니티</a></li>
+            <li><a href="#">다운로드</a></li>
+        </ul>
+    </nav>
+</body>
+</html>

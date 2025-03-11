@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#" method="post">
+        <legend>type 속성</legend>
+        <p>아이디 : <input type="text"></p>
+        <p>비밀번호 : <input type="password"></p>
+        <p>검색 : <input type="search"></p>
+        <p>이메일 : <input type="email"></p>
+        <p>전화번호 : <input type="tel"></p>
+        <p>컬러선택 : <input type="color"></p>
+        <!-- min 최소값, max 최대값, value 배수, range 이동바 -->
+        <p>수량 : <input type="number" min="1" max="10" value="1"></p>
+        <p>수량 : <input type="range" min="1" max="10" value="1"></p>
+        <!-- radio 여러가지 중에 하나를 선택할 수 있다. -->
+        <!-- name 같은 이름으로 묶는 역할이다. (=class)-->
+        <!-- checked 초기값이 체크되어 있다. -->
+        <!-- checked="checked"는 권장 사항이다. -->
+        <p>예 : <input type="radio" name="receive">
+           아니오 : <input type="radio" name="receive" checked="checked"></p>
+        <!-- checkbox는 다중선택이 가능하다 -->
+        <p>html <input type="checkbox">
+            css <input type="checkbox"></p>
+            <!-- submit 연결된 링크로 전송함  -->
+        <p><input type="submit" value="전송"></p>
+            <!-- reset 글자가 다 지워짐 -->
+        <p><input type="reset" value="취소"></p>
+            <!-- button 다른 동작을 위한 트리거 value는 시각적으로 나타나는 이름 -->
+        <p><input type="button" value="확인"></p>
+            <!-- image 이미지 넣기 -->
+        <p><input type="image" src="images/bt.png" alt="전송"></p>
+            <!-- file 파일 선택 -->
+        <p><input type="file"></p>
+    </form>
+</body>
+</html>

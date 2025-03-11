@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 블록요소일때는 높이를 지정하지않아도 자식이 갖는 높이를 가진다 */
+        .cf::after{content: "";
+                    display: block;
+                    clear: both;}
+        .bigbox{width: 500px; background-color: pink; padding: 10px;}
+    
+    
+    .box{width: 150px; 
+        height: 150px; 
+        /* float: left; 하면 bigbox의 높이가 깨짐 */
+        float: left;}
+
+    .box1{background-color: yellow;}
+    .box2{background-color: blue;}
+    .box3{background-color: red;}
+    
+
+    
+
+    </style>
+</head>
+<body>
+    <div class="bigbox cf">
+        <div class="box box1">박스1</div>
+        <div class="box box2">박스2</div>
+        <div class="box box3">박스3</div>
+    </div>
+    <p>나는 다음에 올 요소입니다.</p>
+</body>
+</html>

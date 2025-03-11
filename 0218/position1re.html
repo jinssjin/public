@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{width: 200px; height: 200px;}
+        .box1{background-color: aquamarine;}
+        /* 일반적인 기본형 position:static; 자동으로 되있음 */
+        .box2{background-color: burlywood;}
+        /* position: relative 박스끼리 겹침, top과 left 위치조정, 원래있던 위치에서 이동, 자리값이 있다. absolte에 부모역할(기준역할),
+           다음에 오는 태그에 영향을 미치지 않음(box4를 이동시키지 않음)  */
+        .box3{background-color: darkkhaki;
+                position: relative;
+                top: 50px;
+                left: 50px;
+            z-index: 1;}
+        .box4{background-color: violet;
+            position: relative;}
+        
+    </style>
+</head>
+<body>
+    <div class="box box1">박스1</div>
+    <div class="box box2">박스2</div>
+    <div class="box box3">박스3</div>
+    <div class="box box4">박스4</div>
+</body>
+</html>

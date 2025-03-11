@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #myball{position: relative;
+            left: 200px;
+             top: 10px;
+            width: 120px;
+            height: 160px;
+        border-radius: 50px;
+    
+    background: url(ani/bg-main1.png) no-repeat 50% 50%;
+    animation: myani 3s forwards;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;}
+
+    @keyframes myani{
+        0%{top: 10px;}
+        60%{top: 500px;} }
+
+#myball2{position: relative;
+        left: 600px;
+        top: 50px;
+        width: 120px;
+        height: 160px;
+        background: url(ani/bg-main1.png) no-repeat 50% 50%;
+    animation: myani2 3s forwards;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;}
+
+@keyframes myani2{
+40%{top: 10px;}
+100%{top: 530px;} }
+    </style>
+</head>
+<body>
+    <div id="myball"></div>
+    <div id="myball2"></div>
+</body>
+</html>

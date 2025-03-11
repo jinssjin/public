@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // if문을 사용해 아이디와 비번이 일치했을때 환영문구 출력
+        // 
+        var id = "easy1004";
+        var pw = "112233";
+        
+        var user_id = prompt("아이디는?","");
+        var user_pw = prompt("비밀번호는?","");
+
+        if(user_id==id){
+            if(pw == user_pw){
+                document.write(user_id+"님 환영합니다.")
+            }else{alert("비밀번호가 일치하지 않습니다.")
+            location.reload();  // 새로고침, F5와 유사
+            }           
+        }else{
+            alert("아이디가 일치하지 않습니다.");
+            location.reload();  // 새로고침, F5와 유사
+        }
+    </script>
+    
+</body>
+</html>

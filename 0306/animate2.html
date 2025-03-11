@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{margin: 0;padding: 0;}
+        #box2{
+            width: 50px;
+            height: 50px;
+            background-color: #F00;
+            position: relative;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-3.7.1.js"></script>
+
+
+</head>
+<body>
+    <div id="box2">박스2</div>
+    <p>
+        <button id="leftBtn">left</button>
+        <button id="rightBtn">right</button>
+    </p>
+</body>
+</html>
+
+<script>
+    $(function(){
+        $("#rightBtn").click(function(){
+            $("#box2").stop().animate({left:"+=100px"},500);  // {left:"+=100px"  === left + 100 누적이 가능하다
+            // .stop 버튼을 누르면 기존 행동을 정지하고 버튼을 수행
+        });
+        $("#leftBtn").click(function(){
+            $("#box2").clearQueue().animate({left:"-=100px"},500);
+            // stop이랑 비슷한 효과
+        });
+    });
+</script>

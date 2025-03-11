@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function factorial(n){
+            if(n===0){
+                console.log("호출 끝")
+            }else{
+                console.log("호출" +n);
+                factorial(n-1);
+            }
+        }
+        factorial(10);
+
+        var num = 0;
+            function testFnc(){
+                num++;
+                document.write(num,"<br>");
+                if(num==10) return;  // 이 조건에 만족하면 함수를 빠져나감
+                testFnc();
+            }
+            testFnc();
+    </script>
+</body>
+</html>

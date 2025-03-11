@@ -1,0 +1,42 @@
+*{margin: 0; padding: 0;}
+ul{list-style: none;}
+a{text-decoration: none;}
+
+section{
+    width: 700px;
+    height: 500px;
+    border: 1px solid #333;
+    margin: 100px auto 0;}
+
+.gnb li a{
+        display: block;
+        width: 150px;
+        height: 40px;
+        line-height: 40px;
+        background-color: #ccc;
+        box-sizing: border-box;
+        padding-left: 20px;}
+
+        /* 꺽쇠를 넣으면 메인메뉴의 a만 지정함 */
+.gnb > li > a{
+        background-color: #915959;
+        color: #000;}
+
+
+.gnb > li{
+    width: 150px;
+    height: 40px;
+    overflow: hidden;
+    transition: all 0.5s;
+}
+
+.gnb>li:hover{height: 200px;}
+
+.gnb li ul{
+
+}
+
+.gnb li:hover ul{
+
+
+}

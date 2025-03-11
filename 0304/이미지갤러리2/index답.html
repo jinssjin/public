@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{margin: 0;padding: 0;}
+    ul,li{list-style: none;}
+    a{text-decoration: none;}
+    body{background-color: #333;}
+    #wrap{
+        width: 640px;
+        margin: 100px auto 0;
+    }
+
+    /* #nav{display: flex;} 똑같이 정렬효과 */
+    #nav li{float: left;}
+    #nav li a{
+        display: block;
+        border: 2px solid #bbb;
+        margin: 0 3px 10px;
+        border-radius: 5px;
+    }
+    #nav li a img{width: 70px;}
+
+    #window{clear: both;}
+
+    #nav li a.active{border: 2px solid #fff;}
+
+
+</style>
+<body>
+    <div id="wrap">
+        <ul id="nav">
+            <li><a href="img/lop0.jpg" class="active"><img src="img/thumb0.jpg" alt="호랑이0"></a></li>
+            <li><a href="img/lop1.jpg"><img src="img/thumb1.jpg" alt="호랑이1"></a></li>
+            <li><a href="img/lop2.jpg"><img src="img/thumb2.jpg" alt="호랑이2"></a></li>
+            <li><a href="img/lop3.jpg"><img src="img/thumb3.jpg" alt="호랑이3"></a></li>
+            <li><a href="img/lop4.jpg"><img src="img/thumb4.jpg" alt="호랑이4"></a></li>
+            <li><a href="img/lop5.jpg"><img src="img/thumb5.jpg" alt="호랑이5"></a></li>
+            <li><a href="img/lop6.jpg"><img src="img/thumb6.jpg" alt="호랑이6"></a></li>
+            <li><a href="img/lop7.jpg"><img src="img/thumb7.jpg" alt="호랑이7"></a></li>
+        </ul>
+        <div id="window"><img src="img/lop0.jpg" alt=""></div>
+    </div>
+</body>
+</html>
+
+<script>
+    var navLinks = document.querySelectorAll("#nav li a");
+
+    // 개개별의 링크가 있기 때문에 forEach
+        navLinks.forEach(function(link){
+            link.addEventListener('click',function(e){
+                e.preventDefault();  // 링크금지 = return false와 비슷
+                // href같이 = 으로 연결된 속성값을 불러온다
+                var img_url = link.getAttribute('href');
+                // alert(img_url);
+
+                // set은 지정할때 쓰이고, get은 불러올때 쓰인데
+                document.querySelector("#window img").setAttribute('src',img_url);
+                // "#window.img"d에 src에 img_url에 구한이 이미지 주소로 변경
+
+                navLinks.forEach(function(navLink){
+                    navLink,classList.remove('active')
+                });
+                link.classList.add('active');
+                
+            })
+        })
+
+        // document.addEventListener('DOMContentLoaded', function() {
+//   var navLinks = document.querySelectorAll("#nav li a");
+
+//   for (var i = 0; i < navLinks.length; i++) {
+//     navLinks[i].addEventListener('click', function(event) {
+//       event.preventDefault(); // 기본 동작 차단
+      
+//       var img_url = this.getAttribute('href');
+      
+//       document.querySelector("#window img").setAttribute('src', img_url);
+      
+//       for (var j = 0; j < navLinks.length; j++) {
+//         navLinks[j].classList.remove('active');
+//       }
+      
+//       this.classList.add('active');
+//     });
+//   }
+// });
+</script>

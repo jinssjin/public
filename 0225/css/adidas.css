@@ -1,0 +1,321 @@
+*{margin: 0; padding: 0;}
+
+ul{list-style: none;}
+
+a{text-decoration: none;
+color:black;}
+
+img{border: 0;}
+
+
+/* 몸체를 브라우저 100% 고정 */
+body{
+    position: fixed;
+    width:100%;
+    height:100%;
+    background-color: #111;
+}
+
+/* 비디오를 고정 */
+.vid{
+    position: fixed;
+    width:100%;
+    height:100%;
+    left:0;
+    top:0;
+    opacity: 0.9;
+}
+
+.vid video{
+    width: 100%;
+    min-width: 1920px;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+h1{
+    position: fixed;
+    top:40px;
+    left: 40px;
+
+}
+
+header{
+    /* 가로사이즈를 늘리고 오른쪽으로 많이 감 */
+    width: 1000px;
+    height: 100%;
+    position: fixed;
+    transform: skewx(30deg);
+    background-color: rgba(187, 187, 187, 0.45);;
+    /* 가로사이즈를 늘리고 오른쪽으로 많이 감 */
+    right: -500px;
+}
+
+#gnb{
+    width: 220px;
+    position: absolute;
+    /* 오른쪽 정렬했으니까 li가 왼쪽에 딱 붙게하고 패딩 줌 */
+    left: 0px;
+    top: 150px;
+}
+
+#gnb > li{position: relative;}
+
+#gnb > li > a{
+    display: block;
+    width: 220px;
+    height: 50px;
+    font: bold 18px/3 play;
+    text-align: left;
+    box-sizing: border-box; 
+    /* 오른쪽 정렬했으니까 왼쪽으로 안여백 주기 */
+    padding-left: 40px; 
+    color: black;
+}
+
+/* #gnb > li > a:nth-child(1){color: #fff;} */
+
+#gnb em{
+    display: inline-block;
+    transform: skewX(-40deg);
+}
+
+#gnb li.on{
+    background-color:#383838;
+    color: #fff;}
+
+#gnb > li:hover a{
+    background-color:#383838;
+    color: #fff;}
+
+#gnb li ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.6s;
+    
+}
+
+#gnb ul a{
+    display: block;
+    width: 150px;
+    height: 50px;
+    background-color: #383838;
+    color: #fff;
+    font:bold 16px/2 arial;
+    box-sizing: border-box;
+    padding-left: 40px;
+    margin-bottom: 3px;
+    transition: all 0.6s;
+    border-bottom: 1px solid #fff;
+    /* 하위 메뉴 (2단 메뉴) 높이 주기 */
+    height: 50px;
+    line-height: 50px;
+}
+
+#gnb li:hover ul{
+    left: -150px;
+    opacity: 1;
+    
+    visibility: visible;
+}
+
+#gnb ul a:hover{
+    background-color: #383838;
+    color: #fff;
+}
+
+#sns{
+    position: fixed;
+    top: 50px;
+    right: 50px;
+}
+
+#sns li{float: left;
+margin-right: 40px;}
+
+#sns li a{font-size: 25px;
+color: rgb(56, 56, 56);}
+
+#sns .fa{    
+    opacity: 0.6;
+    transition: all 0.6s;
+}
+#sns .fa:hover{
+    opacity: 1;
+    transform: scale(2.2);}
+
+section .txtbox{
+    position: fixed;
+    top: 300px;
+    left: 150px;
+    width: 340px;
+    height: 280px;
+    border: 3px solid black;
+}
+
+section .txt{
+    position: absolute;
+    top: 500px;
+    left: 140px;
+    font-size: 34px;
+    color: #fff;
+}
+
+.txt strong{
+    font: bold 34px arial;
+    margin-left: 20px;
+    color: rgb(88,88,88);
+}
+
+.tit{
+    position: absolute;
+    top: 290px;
+    left: 130px;
+    font-size: 160px;
+    color: #383838;
+    font-family: monoton;
+    letter-spacing: -1px;
+}
+
+.tit em{
+    color: #fff;
+    font-size: 50px;
+    font-family: play;
+}
+
+.side{
+    position: fixed;
+    bottom:0;
+    /* left: 0; */
+    width: 800px;
+    height: 100%;
+    background-color: #383838;
+    opacity: 0.5;
+    transform: skewX(35deg);
+    left: -1000px;
+    transition: all 0.6s;
+}
+
+.side:hover{
+    left:-600px;
+    opacity: 0.5;
+}
+
+.side .con{
+    width: 420px;
+    height: 100%;
+    position: absolute;
+    left: -50px;
+    bottom: 0;
+    background-color:rgb(88, 88, 88);
+    padding: 10px;
+    transition: all 1s;
+}
+
+.side:hover .con{
+    left: 280px;
+    background-color: #fff;
+    
+    opacity: 0.5;
+}
+
+.side .con p{
+    width: 300px;
+    height: 100px;
+    position: absolute;
+    
+    bottom: 0;
+    left: 150px;
+}
+
+.side .con p img{
+    position: absolute;
+    display: block;
+    width: 120px;
+    height: 80px;
+    left: 150px;
+    opacity: 0.3;
+    transition: all 0.6s;
+}
+
+
+.side:hover .con p img:hover{
+    opacity: 1;
+    width: 200px;
+    height: 100px;
+}
+
+.side .con p:nth-child(1){
+    transform: translate(200px);
+    bottom: 270px;
+    transition: all 0.4s;
+}
+
+.side .con p:nth-child(2){
+    transform: translate(200px);
+    bottom: 160px;
+    transition: all 0.8s;
+}
+
+.side .con p:nth-child(3){
+    transform: translate(200px);
+    bottom: 50px;
+    transition: all 1.2s;
+}
+
+.side:hover .con p{
+    transform: translate(0);
+}
+
+.side .con p em{
+    display: inline-block;
+    transform: skewX(-50deg);
+    color: #111;
+    font: bold 14px/1.7 arial;
+    position: absolute;
+    left: 150px;
+    bottom: 100px;
+}
+
+.side .btn{
+    position: absolute;
+    width: 150px;
+    height: 50px;
+    left: 750px;
+    bottom: 80px;
+    color: #fff;
+    transform: skew(-35deg);
+    
+}
+
+.btn i{
+    font-size: 60px;
+    position: absolute;
+    left: 0;
+    
+}
+
+.btn i:nth-child(1){    animation: ani linear 1.5s infinite;
+}
+
+.btn i:nth-child(2){
+    animation: ani linear 1.5s 0.5s infinite;
+}
+
+.btn i:nth-child(3){
+    animation: ani linear 1.5s 1s infinite;
+}
+
+@keyframes ani {
+    0%{left: 0;transform:scale(1);  opacity: 1;}
+    100%{left: 100px;transform:scale(1.5);  opacity: 0;}
+}
+
+.side:hover .btn{
+    opacity: 0;
+}

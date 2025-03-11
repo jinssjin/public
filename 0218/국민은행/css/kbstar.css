@@ -1,0 +1,39 @@
+*{margin: 0; padding: 0;}
+.section1{width: 1000px;
+    height: 250px;
+margin: 0 auto;
+padding: 30px 0;
+border: 1px solid black;}
+
+.section1 ul{list-style: none;
+overflow: hidden;}
+/* li float되면 부모 ul 높이가 없어짐 */
+
+.section1 ul li{float: left;
+width: 300px;
+height: 200px;
+padding: 20px 30px;
+box-sizing: border-box;
+border: 1px solid #333;
+margin-right: 50px;}
+
+.section1 ul li:last-child{margin-right: 0;}
+
+.section1 ul li div p span{
+    display: inline-block;
+    /* 이미지는 대표적인 inline-block */
+    /* 줄바뀜없이 넓이 높이를 부여하려면 inline-block */
+    padding: 7px;
+    background-color: cadetblue;
+    color: #fff;}
+
+.section1 ul li h3{font-size: 16px;
+margin-top: 10px;}
+
+.section1 ul li div .txt3{font-size: 15px;
+    margin-top: 10px;}
+
+.section1 ul li:hover{box-shadow: 10px 10px 10px #333;}
+.section2{width: 1000px; margin: 0 auto; padding: 30px 0; border: 1px solid black;}
+
+.section2 .left{width: 250px; height: 120px;}

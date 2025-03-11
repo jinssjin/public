@@ -1,0 +1,68 @@
+*{margin: 0; padding: 0;}
+
+h1{width: 500px;
+height: 70px;
+margin-bottom: 20px;
+border: 2px solid #fff;
+background-color: brown;}
+
+p{font-size: 30px;
+padding-bottom: 30px;
+/* 가짜손가락 */
+cursor:pointer;}
+
+.tra{background-color: #aa5329;
+    /* translate, rotate 등등은 항상 transform을 동반한다. */
+    /* 현재위치에서 x로 -500px만큼(왼쪽) 이동 */
+    transform: translate(-500px, 0);
+    /* 0.5초 동안 transition(all)을 보여줘라 */
+    transition: all 0.5s;}
+
+.btn1:hover + .tra{
+    /* "+"선택자는 next를 의미 */
+    transform: translate(0,0);
+}
+
+.rot1{margin: 200px 0;
+transform: rotate(0deg);
+transition: all 0.5s;}
+
+.btn3:hover + .rot2{
+    transform: rotatey(3600deg);
+}
+
+.rot2{margin: 200px 0;
+    transform: rotateY(0deg);
+    transition: all 0.5s;}
+    
+.btn3:hover + .rot2{
+    transform: rotatey(360deg);
+}
+
+.rot3{margin: 200px 0;
+    transform: rotatex(0deg);
+    transition: all 0.5s;}
+    
+.btn4:hover + .rot3{
+    transform: rotatex(360deg);
+}
+
+.sca{margin: 50px 0;
+    transform: scale(1,1);
+    transition: all 0.5s;}
+    
+.btn5:hover + .sca{
+    transform: scale(2,2);
+}
+
+.ske{margin: 50px 0;
+    transform: skewX(0deg);
+    transition: all 0.5s;}
+
+.btn6:hover + .ske{transform: skewX(-45deg);}
+
+.ske1{margin: 50px 0;
+    transform: skewY(0deg);
+    transition: all 0.5s;}
+
+.btn7:hover + .ske1{transform: skewY(45deg);}
