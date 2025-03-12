@@ -166,6 +166,53 @@ section{
     color: white;
 }
 
+#sanmenu{
+    margin-top: 70px;
+
+}
+
 #sanmenu h1{
     background: url(../img/bul_tit.png) no-repeat 0 50%;
+    background-size: contain;
+    margin-left: 260px;
+    padding-left: 20px;
+    font-size: 40px;
 }
+
+#sanmenu > ul {
+    display: flex;
+    position: absolute;
+    right: 200px;
+    top: 770px;
+}
+
+#sanmenu > ul > li{
+    padding: 0 20px;
+    font-weight: bold;
+    background: url(../img/bar.gif)no-repeat 100% 50%;
+    background-size: contain;
+}
+
+#slider2{
+    display: flex;
+    margin-left: 300px;
+}
+
+#slider2 li{
+    width: 320px;
+    height: 300px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#slider2 h3{
+    text-align: center;
+    font-size: 18px;
+}
+
+#slider2 p{
+    margin-top: 10px;   
+    text-align: center;
+    font-size: 10px;
+}
+
