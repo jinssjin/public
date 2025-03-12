@@ -1,0 +1,132 @@
+*{margin: 0; padding: 0;}
+
+.box{width: 100px;height: 100px;
+background-color: yellow;
+position: relative;
+left: 600px;
+top: 50px;}
+
+.one{width: 100px;height: 100px;background-color: #fff;border-radius: 100px;}
+
+.o1{position: absolute;
+    left: 550px;
+    top: 0;}
+.o2{position: absolute;
+    left: 650px;
+    top: 0;}
+.o3{position: absolute;
+    left: 550px;
+    top: 100PX;}    
+.o4{position: absolute;
+    left: 650px;
+    top: 100PX;}
+
+.container{width: 510px;
+            height: 510px; 
+            border: 1px solid black; 
+            margin: 100px auto;}
+
+.face{width: 500px; 
+        height: 500px; 
+        background-color: rgb(140, 213, 255);
+        border-radius: 500px; 
+        margin: 0 auto; 
+        position: relative; 
+        border: 5px solid black;}
+
+.eye{width: 25px;
+    height: 25px;
+    background-color: black; 
+    border-radius: 100px;}
+
+.eye1{position: absolute; 
+    left: 100px; 
+    top: 220px}
+
+.eye2{position: absolute; 
+    right: 100px; 
+    top: 220px}
+
+.no{position: absolute; 
+    right: 225px; 
+    top: 300px;  
+    width: 50px;
+    height: 50px;
+    background-color: black; 
+    border-radius: 100px;
+    z-index: 1;}
+
+.ma{width: 130px;
+    height: 90px;
+    border-radius: 50%;
+    border: 5px solid black;
+    background-color: #fff;
+    }
+
+.mouth1{position: absolute;
+        left: 125px;
+        top: 330px;
+        rotate: -30deg;}
+
+.mouth2{position: absolute;
+        right: 125px;
+        top: 330px;
+        rotate: 30deg;}
+
+.ter{width: 100px;
+    height: 100px;
+    border: 1px solid black;}
+        
+.t_left{position: absolute;
+        left: 80px;
+        top: 330px;}
+
+.t_right{position: absolute;
+        right: 80px;
+        top: 330px;}
+
+.ter1{width: 80px;
+        height: 2px;
+        background-color: black;
+        rotate: 20deg;
+        position: absolute;
+        left: 10px;
+        top: 20px;}
+
+.ter2{width: 80px;
+        height: 2px;
+        background-color: black;
+        position: absolute;
+        left: 10px;
+        top: 50px;}
+
+.ter3{width: 80px;
+        height: 2px;
+        background-color: black;
+        rotate: -20deg;
+        position: absolute;
+        left: 10px;
+        top: 80px;}
+
+.ter4{width: 80px;
+        height: 2px;
+        background-color: black;
+        rotate: -20deg;
+        position: absolute;
+        left: 10px;
+        top: 20px;}
+
+.ter5{width: 80px;
+        height: 2px;
+        background-color: black;
+        position: absolute;
+        left: 10px;
+        top: 50px;}
+
+.ter6{width: 80px;
+        height: 2px;
+        background-color: black;
+        rotate: 20deg;
+        position: absolute;
+        left: 10px;
+        top: 80px;}

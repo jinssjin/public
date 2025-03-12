@@ -1,0 +1,48 @@
+*{margin: 0;padding: 0;}
+header h1{float: left;}
+
+
+header nav{float: right;
+width: 600px;
+height: 50px;
+background-color: yellow;
+margin-top: 40px;
+margin-right: 10px;}
+
+header nav ul{list-style: none;}
+
+header nav > ul > li{float: left;}
+
+header nav ul a{display: block;
+width: 150px;height: 50px;
+text-align: center;
+line-height: 50px;
+text-decoration: none;
+color: #000;}
+
+header nav ul li ul{background-color: yellow;
+    display: none;}
+
+header nav ul li:hover ul{display: block;
+position: absolute;}
+
+
+.container{width: 1200px; margin: 0 auto;}
+header{height: 100px; background-color: aqua;}
+.img_slider{height: 300px; background-color: tan;}
+section{height: 200px; background-color: cadetblue;}
+section article{width: 400px; height: 200px; float: left;}
+section article.notice{background-color: #ccc;}
+section article.banner{background-color: #aaa}
+section article.icons{background-color: #888;}
+footer{height: 100px; background-color: rgb(255 70 20);}
+
+footer .foot_logo{width: 200px;height: 100px;float: left;background-color: hotpink;}
+
+footer .foot_right{width: 1000px;height: 100px;float: left;background-color: pink;}
+
+footer .foot_right .foot_menu{width: 1000px;height: 50px;background-color: #555;}
+
+footer .foot_right .foot_copy{width: 1000px;height: 50px;background-color: #777;}
+
+

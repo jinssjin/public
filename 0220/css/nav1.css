@@ -1,0 +1,44 @@
+*{margin: 0; padding: 0;}
+
+ul{list-style: none;}
+
+a{text-decoration: none;
+    color: #000;}
+
+nav{
+    width: 100%;
+    height: 70px;
+    background-color: #ccc;
+    text-align: center;
+    /* overflow: hidden; #1 : 이거 해도 구현됨 */
+    position: relative;
+}
+
+/* nav:hover {height: 350px;} #1 : 이거 해도 구현됨 */
+
+nav>ul {
+    width: 100%;
+    background-color: #ccc;
+    height: 70px;
+    /* position: absolute 자리값을 차지하지않게하기 위해 아래도 겹치게 되고(올라오게) */
+    position: absolute;
+    /* 높이가 370px인데 overflow: hidden을 줘서 70px만 보이고 */
+    overflow: hidden;
+    /*  */
+    transition: all 0.3s;
+        }
+
+nav>ul:hover{
+    height: 370px;
+}
+
+nav>ul>li {
+    /* float: left; 위 nav에 스타일 준 택스트 알라이언 센터가 무효화 */
+display: inline-block;}
+
+nav ul li a{display: block;
+    padding: 25px;}
+
+nav ul li ul li{
+    }
+

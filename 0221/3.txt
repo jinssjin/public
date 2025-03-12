@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Play:wght@400;700&display=swap');
+
+*{margin: 0; padding: 0;}
+ul{list-style:none;}
+a{text-decoration: none;color: #bbb;}
+img{border: 0;}
+
+/* 풀스크린으로 동작하도록 지정(가로/세로 스크롤바 제거) */
+
+body{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #111;
+}
+
+.vid{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0.9;
+}
+
+.vid video{
+    width: 100%;
+    /* min-width: 1920px; :최소 크기를 1920px로 고정 */
+    min-width: 1920px;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);}
+
+h1{
+    position: fixed;
+    top: 40px;
+    left: 50px;
+    z-index: 10;
+}
+
+header{
+    width: 700px;
+    height: 100%;
+    position: fixed;
+    background: linear-gradient(-45deg, #e6fc55,#b9fb05,#97e031);
+    transform: skewX(-40deg);
+    left: -400px;
+}
+
+/* 메뉴를 오른쪽으로 이동 */
+#gnb{
+    width: 220px;
+    position: absolute;
+    right: 0;
+    top: 150px;
+}
+
+#gnb>li{position: relative;}
+
+#gnb > li > a{
+    display: block;
+    width: 220px;
+    height: 50px;
+    /* 글자 : 진하게 크기18 줄간격은 3배 글씨체play */
+    font:bold 18px/3 play;
+    text-align: right;
+    box-sizing: border-box;
+    padding-right: 40px;
+    color: #222;
+}
+
+#gnb em{
+    display: inline-block;
+    /* 박스(인라인블록)로 변화해야 각도를 줄 수 있다. */
+    transform: skewX(40deg);
+    /* 전체 header -40deg를 줬기 때문에 40deg 변환 글자 제대로 보임 */
+}
+
+#gnb > li.on > a,
+#gnb > li:hover > a{
+    background-color: #111;
+    color: #fff;
+}
+
+
+/* 2차메뉴 */
+
+#gnb li ul{
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    /* visibility: hidden; : display:none과 비슷 */
+    visibility: hidden;
+    transition:all 0.5s;
+}
+
+#gnb ul a{
+    display: block;
+    width: 150px;
+    background-color: #222;
+    font: bold 16px/2.5 arial;
+    color: #fff;
+    box-sizing: border-box;
+    padding-left: 50px;
+    padding-bottom: 3px;
+    transition: all 0.6s;
+    border-bottom: 1px solid #69fb05;
+}
+
+/* 2차메뉴 호번시 스타일 */
+
+#gnb li:hover ul{
+    left: 220px;
+    opacity: 1;
+    /* display:none ▶ blockd은 transition적용이 안됨 */
+    visibility: visible;
+}
+
+#gnb ul a:hover{
+    background-color: #b9fb05;
+    color: #333;
+}
+
+/* sns버튼 스타일 */
+
+#sns{
+    position: fixed;
+    top: 60px;
+    right: 50px;
+}
+
+#sns li{
+    float: left;
+    margin-right: 30px;
+}
+
+#sns .fa{
+    font-size: 25px;
+    color: #69fb05;
+    opacity: 0.6;
+    transition: all 0.6s;
+}
+
+#sns .fa:hover{
+    opacity: 1;
+    transform: scale(1.2);
+}

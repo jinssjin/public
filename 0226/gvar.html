@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // wjsdurqustn
+        var globalMessage = "나는 전역 변수야";
+        function showMessage(){
+            var localMessage = "나는 지역 변수야";
+            console.log(globalMessage);  // 전역 변수 접근 가능
+            consolelo.log(localMessage);  //지역 변수 접근 가능
+        }
+
+        showMessage();
+        console.log(globalMessage);
+        console.log(localStorage);
+
+        // globalMessage 함수 내부에서도 접근 가능 (접근 가능)
+        // localStorage 함수 내부에서만 사용가능 (지역 변수)
+        // 함수 외부에서 localStorage를 출력하면 오류 발생
+
+    </script>
+</body>
+</html>

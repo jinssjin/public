@@ -1,0 +1,86 @@
+*{margin: 0; padding: 0;}
+.bigbox{width: 500px; 
+        height: 500px;
+        position: relative;
+        border: 1px dotted #333;
+        margin: 50px auto;}
+
+.ear{width: 150px;
+        height: 150px;
+        border: 10px solid #333;
+        border-radius: 50%;
+        background-color: #d59729;
+        position: absolute;
+        top: 20px;}
+
+.ear.left{left: 40px;}
+.ear.right{right: 40px;}
+        
+
+.face{width: 500px;
+        height: 450px;
+        border: 10px solid #333;
+        position: absolute;
+        /* 기준위치가 빅박스 이기 때문에 빅박스의 bottom에 붙어서 생성됨 */
+        bottom: 0;
+        border-radius: 50%;
+        background-color: #d59729;
+        /* 빅박스 사이즈에 맞게 */
+        box-sizing: border-box;}
+
+.eyebrow{width: 100px;
+        height: 20px;
+        border: 1px solid #333;
+        position: absolute;
+        top: 120px;
+        background-color: #000;
+        border-radius: 7px;}
+
+.eyebrow.left{left: 100px;}
+.eyebrow.right{right: 100px;}
+
+.eyeball{width: 30px;
+    height: 30px;
+    border: 1px solid #333;
+    position: absolute;
+    top: 190px;
+    background-color: #000;
+    border-radius: 30px;}
+
+.eyeball.left{left: 135px;}
+.eyeball.right{right: 135px;}
+
+.nose{width: 30px;
+        height: 30px;
+        border: 1px solid #333;
+        background-color: #000;
+        border-radius: 30px;
+        position: absolute;
+        /* 50% 중앙정렬해야되는데 시작점에서 40px이 생성됨 */
+        /* 그래서 20px만큼 오른쪽으로 이동시켜줘야할때 */
+        top: 230px;
+        left: 50%;
+        margin-left: -20px;
+    z-index: 10;}
+
+.mouth{width: 80px;
+    height: 74px;
+    border: 10px solid #000;
+    border-radius: 50%;
+    background-color: #fff;
+    position: absolute;
+    top: 240px;
+    box-sizing: border-box;}
+
+.mouth.left{left: 175px;}
+.mouth.right{right: 175px;}
+
+.mouth_cover{position: absolute;
+                width: 38px;
+                height: 40px;
+                background-color: #fff;
+                top: 2px;}
+
+.mouth_cover.left{left: 42px;}
+.mouth_cover.right{right: 42px;
+                    transform: rotate(45deg);}

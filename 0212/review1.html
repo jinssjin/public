@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+h1{background-color: red; width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align:center ;}
+table{text-align:center ;}
+.ye{background-color: yellow;}
+fieldset{
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    /* 넓이가 있는 블럭요소 마진 양쪽을 auto를 주면 중앙정렬 */
+}
+legend{text-align: center;}
+    </style>
+</head>
+<body>
+    <h1>오늘의 복습</h1>
+    <p>텍스트1</p>
+    <p>텍스트2</p>
+    <p>라이브 서버 연습</p>
+
+    <table border="1">
+        <colgroup>
+        <col style="width: 100px;">
+        <col style="width: 100px;">
+        <col style="width: 100px;">
+        <col style="width: 100px;">
+        <col style="width: 100px;">
+        
+        </colgroup>
+        <tr>
+            <td rowspan="2">과목/난이도</td>
+            <td colspan="2">html/css</td>
+            
+            <td colspan="2">javascript/JQuery</td>
+            
+        </tr>
+        <tr>
+            
+            <td class="ye">쉽고</td>
+            <td>재미있고</td>
+            <td>어렵고</td>
+            <td style="background-color: aqua;">신기하다</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    <form action="#" method="post">
+        <fieldset>
+            <legend>로그인</legend>
+            <p>ID : <input type="text"></p>
+            <p>PW : <input type="password"></p>
+        </fieldset>
+    </form>
+</body>
+</html>

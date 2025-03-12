@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div{width: 500px;
+        height: 300px;
+        border-radius: 10px;}
+        /* css3를 지원하지 않는 브라우저일 경우 빨간색 배경 */
+    .grad{background: red;
+        /* 타원형으로 흰색 노란색 빨간색 순으로 바뀌는 그라데이션 */
+        background: radial-gradient(white, yellow, red);}
+    
+    .grad1{background: red;
+        /* 원형(동그라미)으로 흰색 노란색 빨간색 순으로 바뀌는 그라데이션 */
+        background: radial-gradient(circle, white, yellow, red);}
+</style>
+<body>
+    <div class="grad"></div>
+    <div class="grad1"></div>
+</body>
+</html>

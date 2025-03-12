@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* background-color 배경색, color 글자색 */
+.red{background-color: red; color: azure; font-family: arial; font-size: 50px;}
+.ye{background-color: yellow; color: blue;}
+.color1{color: red;}
+.gr{background-color: green;}
+.color2{color: red;}
+.bo{border: 1px solid black;}
+.po{padding: 10px;}
+</style>
+<body>
+    <!-- 두가기 이상의 효과를 주고 싶을땐 class 하나에 띄어쓰기를 하면 됩니다. -->
+        <!-- span class="ye" class="color1" (x) -->
+        <!-- span class="ye color1" (o) -->
+    <h1 class="red">나는 빨간색</h1>
+    <h1 class="ye">나는 노란색</h1>
+    <p>요즈음은 <strong class="color1">반응형</strong> 웹이 대세이다.</p>
+    <p>요즈음은 <span class="ye color1 bo po">반응형</span>웹이 대세이다.</p>
+    <!-- 배경색은 초록(green) 글자색은 빨간색을 적용해 보세요. -->
+    <p>요즈음은<span class="gr color2">반응형</span> 웹이 대세이다.</p>
+</body>
+</html>

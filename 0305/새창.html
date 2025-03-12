@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{list-style: none;}
+        .tab_menu{display: flex;}
+        .tab_menu li{padding: 10px; border: 2px solid #333;}
+        .tab_menu li.on{background-color: red; color: #fff;}
+        .tab_list{width: 210px; height: 100px; border: 2px solid #333; margin-left: 40px;}
+        .tab_list li{display: none; padding-top: 20px;}
+        .tab_list li.active{display: block;}
+    </style>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    
+</head>
+<body>
+    <ul class="tab_menu">
+        <li class="on">월요일</li>
+        <li>화요일</li>
+        <li>수요일</li>
+        <li>목요일</li>
+        <li>금요일</li>
+        <li>토요일</li>
+        <li>일요일</li>
+    </ul>
+    <ul class="tab_list">
+        <li class="active">질병의날</li>
+        <li>피로회복의날</li>
+        <li>주말을 고대하는날</li>
+        <li>희망의날</li>
+        <li>미치는날</li>
+        <li>휴식의날</li>
+        <li>holly shit</li>
+    </ul>
+</body>
+</html>
+
+<script>
+    $(function(){
+        $(".tab_menu li").click(function(){
+            
+            var i = $(this).index();
+            $(".tab_menu li").removeClass("on");
+            $(".tab_menu li").eq(i).addClass("on");
+
+            $(".tab_list li").removeClass("active");
+            $(".tab_list li").eq(i).addClass("active");
+        })
+    })
+</script>

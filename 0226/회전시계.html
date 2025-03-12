@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #clock{
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 100px auto 0;
+            border: 1px solid #333;
+        }
+
+        #clock img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        <span id="year">0000</span>년
+        <span id="month">00</span>월
+        <span id="date">00</span>일
+        <span id="nday">0</span>
+        <span id="hours">00</span>시
+        <span id="minutes">00</span>분
+        <span id="second">00</span>초
+    </h1>
+    <div id="clock">
+        <img src="images/clock.png" alt="시계" id="click1">
+        <img src="images/h.png" alt="시" id="hour1">
+        <img src="images/m.png" alt="분" id="minute1">
+        <img src="images/s.png" alt="분" id="second1">
+    </div>
+    <script>
+        autotime();
+        setInterval(autotime,1000);
+
+    function autotime(){
+        var today = new Date();
+            var year = today.getFullYear();
+            var month = today.getMonth()+1;
+            var date = today.getDate();
+            var day = today.getDay();
+                switch (day) {
+                        case 0:
+                        day = "일요일"
+                        break;
+
+                        case 1:
+                        day = "월요일"
+                        break;
+
+                        case 2:
+                        day = "화요일"
+                        break;
+
+                        case 3:
+                        day = "수요일"
+                        break;
+
+                        case 4:
+                        day = "목요일"
+                        break;
+
+                        case 5:
+                        day = "금요일"
+                        break;
+                
+                    default:
+                        day = "토요일"
+                        break;
+                }
+
+            var h = today.getHours();
+            var m = today.getMinutes();
+            var s = today.getSeconds();
+
+            document.getElementById('year').innerHTML = year;
+            document.getElementById('month').innerHTML = month;
+            document.getElementById('date').innerHTML = date;
+            document.getElementById('nday').innerHTML = day;
+            document.getElementById('hours').innerHTML = h;
+            document.getElementById('minutes').innerHTML = m;
+            document.getElementById('second').innerHTML = s;
+    }
+
+// id선택자를 선택하는 방법
+    // document.getElementById('hour1');
+    // document.getElementById('munite1');
+    // document.getElementById('second1');
+ 
+    var si = document.getElementById('hour1');
+    var bun = document.getElementById('minute1');
+    var cho = document.getElementById('second1');
+
+    if(h>12){
+        h = h -12;
+    }
+
+    var dh = (h * 30) + (m/2);
+    var dm = m * 6;
+    var ds = s * 6;
+
+    si.style.transform = "rotate("+dh+"deg)";
+    bun.style.transform = "rotate("+dm+"deg)";
+    // 변수를 넣을때는 "+변수+"로 묶어 줘야함
+    cho.style.transform = "rotate("+ds+"deg)";
+    </script>
+</body>
+</html>

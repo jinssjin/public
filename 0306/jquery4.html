@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            width: 200px;
+            text-align: center;
+            border: 1px solid #333;
+            cursor:pointer
+        }
+
+        h1 .on{
+            background-color: blueviolet;
+            color: #fff;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-3.7.1.js"></script>
+
+    
+</head>
+<body>
+    <h1>난 버튼</h1>
+</body>
+</html>
+
+<script>
+    $(function(){
+        $("h1").click(function(){
+            // if($(this).hasClass("on")){  // hasClass는 뒤에 있는 class를 갖고있는지 판단 갖고있다면 true, 갖고있지않다면 false
+            //     $(this).removeClass("on");
+            // }else{
+            //     $(this).addClass("on");
+            // }
+            $(this).toggleClass("on");
+        });
+    })        
+</script>

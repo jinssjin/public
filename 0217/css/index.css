@@ -1,0 +1,81 @@
+*{margin: 0; padding: 0;}
+#wrapper{width: 900px; margin: 0 auto;}
+header{height: 200px;
+background-color: #f46075;}
+
+header h1{float: left;
+    color: white;
+margin-left: 50px;
+margin-top: 70px;}
+
+header .logo_p{float: right;
+    margin-right: 20px;
+    margin-top: 20px;}
+
+nav{height: 60px;
+background-color: #ccc;}
+
+nav ul{list-style: none;}
+
+nav > ul > li{float: left;
+margin-left: 40px;
+margin-top: 10px;}
+
+nav ul li a{display: block;
+width: 160px;
+height: 40px;
+line-height: 40px;
+text-align: center;
+text-decoration: none;
+background-color: #aaa;}
+
+nav ul li ul{text-align: center;
+    display: none;}
+
+nav ul li:hover ul{display:block;
+position: absolute;}
+
+
+nav ul li a:hover{background-color: #f46075;
+font-weight: bold;
+color: #fff;
+border-radius: 20px;}
+
+nav ul li ul li a:hover{border-radius: 0;}
+
+.main{height: 550px;}
+
+section{width: 650px; height: 550px; background-color: skyblue;
+float: left;}
+
+/* padding과 마진을 둘 다 써도 된다면 padding을 써라 */
+section h2{padding: 10px;
+    text-align: center;}
+
+section article{width: 270px; height: 210px;
+    float: left;
+    padding: 10px;
+    border: 1px solid black;
+background-color: #fff;
+margin: 0 0 15px 20px;}
+
+section article h3{padding-bottom: 10px;
+    background-image: url(../images/img/bg.png);background-repeat: no-repeat;
+padding-left: 30px;}
+
+section article p{font-size: 12px;
+    /* text-align: justify; : 양쪽 정렬 */
+    text-align: justify;
+padding-left: 10px;}
+
+/* 이미지도 text-align: center; */
+aside{width: 250px; height: 550px; background-color: #ffffcc; float: left;text-align: center;}
+
+aside h2{padding: 10px 0;}
+
+aside img{padding-bottom: 10px;
+}
+
+
+footer{height: 50px; background-color: #333;color: #fff;
+    text-align: center;line-height: 50px;}

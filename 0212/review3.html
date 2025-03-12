@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#" method="post">
+        <p>type 속성</p>
+        <p>아이디 : <input type="text"></p>
+        <p>비밀번호 : <input type="password"></p>
+        <p>검색 : <input type="search"></p>
+        <p>이메일 : <input type="email"></p>
+        <p>컬러선택 : <input type="color"></p>
+        <p>수량 : <input type="number" min="1" max="10" value="1"></p>
+        <p>수량 : <input type="range" min="1" max="10" value="1"></p>
+        <p>예<input type="radio" name="receive" checked="checked"></p>
+        <p>아니오<input type="radio" name="receive" checked="checked"></p>
+        <p>html<input type="checkbox" ></p>
+        <p>css<input type="checkbox" checked="checked"></p>
+        <p><input type="submit" value="전송"></p>
+        <p><input type="reset" value="취소"></p>
+        <p><input type="button" value="확인"></p>
+        <p><input type="file"></p>
+    </form>
+
+    <form action="#" method="post">
+            <fieldset>
+                    <legend>회원가입</legend>
+                    <p>가입목적</p>
+                    <textarea name="" id="" cols="100" rows="5"></textarea>
+                    <p>전화번호 :
+                        <select>
+                            <option>지역번호</option>
+                            <option selected="selected">02</option>
+                            <option>031</option>
+                            <option>044</option>
+                        </select>
+                    </p>
+            </fieldset>
+    </form>
+
+    <h1>label 요소</h1>
+    <form action="#" method="post">
+        <table border="1">
+            <caption>회원가입 입력</caption>
+            <colgroup>
+                <col style="width: 200px;">
+                <col style="height: 500px;">
+            </colgroup>
+            <tbody>
+                <tr>
+                    <th><label for="id">아이디</label></th>
+                    <th><input type="text" id="id" title="아이디입력" placeholder="아이디입력" required="required"></th>
+                </tr>
+                <tr>
+                    <th><label for="pw">비밀번호</label></th>
+                    <th><input type="password" id="pw" title="비번입력" placeholder="영문숫자혼합 8자리이상"></th>
+                </tr>
+            </tbody>
+        </table>
+        <div><input type="submit" value="회원가입"></div>
+    </form>
+
+</body>
+</html>

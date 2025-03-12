@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .font1{
+            font-family: "궁서";
+            font-size: 36px;
+            font-weight: bold;
+            font-style: italic;
+            /* 줄간격 */
+            line-height: 2.0;
+        }
+        /* 축약해서 쓸 수 있다. 굵기 특성 글씨크기/줄간격 글씨체 (글씨 크기와 글씨체는 필수적으로 들어가야 한다.) */
+        .font2{
+            font: bold italic 36px/2.0 "궁서";
+        }
+
+        .font3{
+        /* 들여쓰기, -(마이너스)를 입력시 내어쓰기 */
+            text-indent: 20px;
+        }
+
+        .font4{
+            /* 자간, span쓰면 일부분도 가능 */
+            letter-spacing: 10px;
+        }
+
+        .font5{
+            font-size: 50px;
+            font-weight: bold;
+            /* 그림자가 들어감. 오른쪽(-이면 왼쪽) 아래(-이면 위), 블러 */
+            text-shadow: 0px -10px 5px red;
+        }
+
+        .img1{box-shadow: 10px 10px 10px #333;}
+        .box{
+            width: 200px;
+            height: 200px;
+            box-shadow: 10px 10px 10px #333;}
+    </style>
+</head>
+<body>
+    <p>폰트연습 2번째</p>
+    <p class="font1">폰트연습 2번째</p>
+    <p class="font2">폰트연습 2번째</p>
+    <p class="font3">폰트연습 2번째</p>
+    <p class="font4">폰트연습 2번째</p>
+    <p class="font5">폰트연습 2번째</p>
+    <img src="images/slide1.jpg" alt="" width="500" class="img1">
+    <div class="box"></div>
+</body>
+</html>

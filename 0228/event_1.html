@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/functiong.css">
+</head>
+<body>
+    <ul>
+        <!-- 바깥에 ""를 썼으면 안에는 ''를 써야한다. 형제가 아님을 구분 -->
+        <li class="on"><a href="#" onclick="return changeBg('green')">green</a></li>
+        <li><a href="#" onclick="return changeBg('orange')">orange</a></li>
+        <li><a href="#" onclick="return changeBg('purple')">purple</a></li>
+    </ul>
+    <div id="result"></div>
+    <script>
+        // () : 'green', 'orange', 'purple'를 전달할 매개변수 color
+        function changeBg(color){
+            const list = document.querySelectorAll('li')
+            list.forEach(item => item.classList.remove('on'));
+            // event.target 내가 행위를 준 놈 (=여기서는 onclick)
+            // parentElement 부모요소에
+            // ClassList 클래스에
+            // add 추가해라
+            event.target.parentElement.classList.add('on');
+            
+            // const list = document.querySelectorAll('li')
+            // li는 여러개 있으므로 querySelectorAll
+            // list.ClassList.add('on'); a에 onclick을 줘서
+            // list에 class="on"을 추가해라 
+
+            // var result = document.getElementById('result'); 아래와 같음
+            var result = document.querySelector('#result'); // id를 알려줘야하기 때문에 #
+            // querySelector(class가 한개일때) querySelectorAll(class가 여러개일때 공통 class)
+            result.style.backgroundColor = color;
+            return false;  // a링크는 초기화면으로 돌아가려는 성질이 있는데 방지
+            // a태그 onclick="return 과 <script> function 블록안에 return false; 쓰기
+        }
+    </script>
+</body>
+</html>

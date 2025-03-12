@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{width: 200px; height: 200px;}
+        .box1{background-color: aquamarine;}
+        .box2{background-color: burlywood;}
+        .box3{background-color: darkkhaki;
+            /* 위로 겹쳐서 이동 밑에 있는 다른 박스에 영향을 미치지 않음. 겹쳐서 위에 표시됨 */
+            /* 자리값이 있음 : 다른곳으로 이동한다고 해서 다른 상자들에게 자리를 피해주지 않는다. 하얀부분으로 남아있음 */
+            /* 향후 absolute에 부모가 되기도 한다 */
+            /* 기준위치가 원래있던곳에서 계산, 시작 위치 cf. 앱솔루트는 브라우저 화면이 기준위치 */
+            position: relative;
+                top: 50px;
+                left: 50px;}
+        .box4{background-color: violet}
+        
+    </style>
+</head>
+<body>
+    <div class="box box1">박스1</div>
+    <div class="box box2">박스2</div>
+    <div class="box box3">박스3</div>
+    <div class="box box4">박스4</div>
+</body>
+</html>

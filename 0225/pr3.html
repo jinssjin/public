@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 사용자로 부터 0~6을 입력받아 해당요일을 출력하세요
+        // 0이면 일요일 1일면 월요일 6이면 토요일
+        // switch case문을 활용해서 만들어 보세요
+    
+        var num = prompt("숫자를 입력하세요","")
+        var result; // 추가
+        switch (num) {
+            case "0":
+            result = "일요일" // 추가
+            break;
+            case "1":
+            result = "월요일"
+            break;
+            case "2":
+            result = "화요일"
+            break;
+            case "3":
+            result = "수요일"
+            break;
+            case "4":
+            result = "목요일"
+            break;
+            case "5":
+            result = "금요일"
+            break;
+            case "6":
+            result = "토요일"
+            break;
+            default: result = "잘못된 입력값 입니다."
+                break;
+        }
+        document.write(result)
+
+    </script>
+</body>
+</html>

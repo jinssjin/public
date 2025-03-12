@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+#cat-container {
+  position: relative;
+}
+#cat {
+  width: 100px;
+  position: absolute;
+  transition: transform 0.3s ease-in-out;
+}
+
+
+
+
+</style>
+
+
+</head>
+<body>
+    <div id="cat-container">
+        <img id="cat" src="img/1.png" alt="Funny Cat">
+    </div>
+</body>
+</html>
+
+<script>
+
+    let cat = document.getElementById('cat');
+    let currentX=0;
+    let currentY=0;
+
+    document.addEventListener('keydown',function(event){
+        moveCat(event.key);
+    });
+
+    function moveCat(direction){
+        const step = 20;
+        switch(direction){
+            case 'ArrowUp':
+                currentY = currentY - step;
+                break;
+            case 'ArrowDown':
+                currentY += step;
+                break;
+            case 'ArrowLeft':
+                currentX = currentX - step;
+                break;
+            case 'ArrowRight':
+                currentX += step;
+                break;      
+
+                // 누적된 위치로 이동
+                
+        }
+
+        cat.style.transform = `translate(${currentX}px,${currentY}px)`;
+    }
+
+</script>

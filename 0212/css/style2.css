@@ -1,0 +1,16 @@
+h1{background-color: red;}
+p{color: blue;}
+.gr{color: green;}
+/* id선택자는 body안에 오로지 한개 */
+/* 중복이 불가능하기 때문에 전체적으로 구분되어질때 사용 */
+#pink1{background-color: pink;}
+.btxt{color: red;}
+.ctxt{color: blueviolet;}
+.atxt{font-weight: bold;}
+#b1{background-color: brown;}
+.a1{background-color: hotpink !important;}
+/* 선택자 우선순위 */
+/* 1. !important */
+/* 2. id선택자 */
+/* 3. class선택자 */
+/* 4. 일반선택자(type선택자) */

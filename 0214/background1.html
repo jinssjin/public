@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+*{margin: 0; padding: 0;}
+header{width: 1200px; height: 300px; background-image:url(images/slide1.jpg) ;
+margin: 0 auto;}
+
+header .arrow{width: 32px;height: 32px;border: 1px solid #333;}
+.arrow.left{margin-top: 80px;
+float: left;
+background-image:url(images/p1.png);
+background-repeat: no-repeat;
+/* background-position: 0 0 이미지의 특정 부분으로 이동하는 것 */
+/* background-position: +는 오른쪽 -는 왼쪽, 이미지의 시작 위치!로 이동 */
+background-position: 0 0;}
+.arrow.right{margin-top: 80px;
+    float: right;
+    background-image:url(images/p1.png);
+background-repeat: no-repeat;
+background-position: -43px 0px;}
+
+.arrow.left:hover{background-position: 0 -32px;}
+.arrow.right:hover{background-position: -43px -32px;}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="arrow left"></div>
+        <div class="arrow right"></div>
+
+    </header>
+</body>
+</html>

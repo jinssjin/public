@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* hover 마우스를 올리면 반응함 */
+        ul li:hover a{background-color: yellow;
+        /* 밑줄 침 */
+        text-decoration: underline;}
+        /* ul li a:visited{background-color: yellow;} */
+        /* a 태그를 붙이면 파란글씨에 밑줄이 생김, 방문하면 보라색으로 변함 */
+        ul li a{color: black;
+                text-decoration: none;}
+        /* 머릿말 제거 */
+        ul li{list-style: none;
+        /* 왼쪽으로 붙여서 나열해라 */
+        float: left;}
+        /* a에 마우스를 클릭하는 순간 오렌지색으로 바뀜 */
+        ul li a:active{background-color: orange;}
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="#">메뉴1</a></li>
+        <li><a href="#">메뉴2</a></li>
+        <li><a href="#">메뉴3</a></li>
+        <li><a href="#">메뉴4</a></li>
+    </ul>
+</body>
+</html>

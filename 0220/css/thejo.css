@@ -1,0 +1,114 @@
+*{margin: 0; padding: 0;}
+
+ul,li{list-style: none;}
+
+a{color: black; text-decoration: none;}
+
+.header_out{
+    width: 100%;
+    position: relative;
+    z-index: 5;
+}
+
+header{
+    width: 1000px;
+    height: 250px;
+    border: 1px solid #333;
+    margin: 0 auto;}
+
+.logo{
+    position: absolute;
+    width: 200px;
+    height: 30px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}    
+
+.logo img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.sns{
+    float: left;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+
+.lab{float: right;
+margin-right: 10px;
+margin-top: 10px;
+}
+
+.lnb li{float: left;
+        padding: 0 10px;
+    background: url(../images_the/bar.png) no-repeat 100% 50%;}
+
+.lnb li:last-child{background: none;}
+
+.main_menu{
+    position: absolute;
+    width: 100%;
+    top: 220px;
+    left: 0;
+    height: 30px;
+    background-color: yellow;
+}
+
+.main_menu > ul > li {float: left;
+text-align: center;}
+
+.main_menu > ul {
+    position: relative;
+    width: 1000px;
+    height: 30px;
+    background-color: #333;
+    margin: 0 auto;
+    z-index: 10;
+    /* shadow가 ul보다 나중에 만들어져서 */
+}
+
+
+.main_menu ul li a{
+    display: block;
+    width: 200px;
+    height: 30px;
+    line-height: 30px;
+    color: aliceblue;
+}
+
+.main_menu ul li ul{
+    background-color: #777;
+    position: absolute;
+    height: 0px;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+.main_menu ul:hover li ul{
+    height: 100px;
+}
+
+.shadow{
+    width: 100%;
+    background-color: burlywood;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    height: 0px;
+    transition: all 0.3s;
+}
+
+.main_menu ul:hover + .shadow{
+    height: 100px;
+}
+
+
+
+
+
+
+
+

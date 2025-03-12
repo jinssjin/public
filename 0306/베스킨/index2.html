@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #252422;
+        }
+
+        div{
+            width: 395px;
+            height: 160px;
+            margin: 50px auto;
+
+        }
+
+        dl{
+            width: 395px;
+            height: 160px;
+        }
+
+        dt{
+            width: 25px;
+            height: 160px;
+            float: left;
+        }
+        
+        dt span{
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-indent: -9999px;
+            /* step1,2,3의 글씨를 감춤 */
+        }
+
+        dd{
+            width: 320px;
+            height: 160px;
+            float: left;
+            overflow: hidden; /* dd에 넓이를 없애주면 안보임 */
+        }
+
+        
+        /* 기본 배경사진 */
+
+        dt#step1 span{
+            background: url(blue01.png) no-repeat 0 0;
+        }
+
+        dt#step2 span{
+            background: url(blue01.png) no-repeat 0 0;
+        }
+
+        dt#step3 span{
+            background: url(blue01.png) no-repeat 0 0;
+        }
+
+        /* 클릭한 dt배경사진(dd가 열린) */
+
+        dt#step1 span.selected{
+            background: url(pink01.png) no-repeat 0 0;
+        }
+
+        dt#step2 span.selected{
+            background: url(pink01.png) no-repeat 0 0;
+        }
+
+        dt#step3 span.selected{
+            background: url(pink01.png) no-repeat 0 0;
+        }
+
+        /* hover시 배경사진 */
+
+        dt#step1 span.over{
+            background: url(orange01.png) no-repeat 0 0;
+        }
+
+        dt#step2 span.over{
+            background: url(orange01.png) no-repeat 0 0;
+        }
+
+        dt#step3 span.over{
+            background: url(orange01.png) no-repeat 0 0;
+        }
+
+        
+
+    </style>
+    <script src="http://code.jquery.com/jquery-3.7.1.js"></script>
+
+</head>
+<body>
+     <div>
+        <dl>
+            <dt id="step1"><span>Step.1</span></dt>
+            <dd><img src="menuimg01.jpg" alt="" width="320" height="160">
+            </dd>
+            <dt id="step2"><span>Step.2</span></dt>
+            <dd><img src="menuimg02.jpg" alt="" width="320" height="160">
+            </dd>
+            <dt id="step3"><span>Step.3</span></dt>
+            <dd><img src="menuimg03.jpg" alt="" width="320" height="160">
+            </dd>
+        </dl>
+    </div>
+</body>
+</html>
+
+<script>
+    $(function(){
+        $('dd').css("width","0px"); /* css에서 dd에 overflow:hidden;이 걸려있기 떄문에 넓이 없애면 안보임  */
+        $('dd').eq(0).css("width","320px");
+        $('dt:eq(0) span').addClass("selected")
+        // $('dt:first span').addClass("selected") 위와 같음
+        // $('dt:eq(0)').find('span').addClass("selected") 위와 같음
+        // $('dt:eq(0)').children('span').addClass("selected") 위와 같음
+        $('dl dt').click(function(){
+            var kkk = $(this).next('dd').css('width')
+            // alert(kkk)
+
+            if(kkk === '0px'){
+                //$('dd').stop().animate({width:"0px"},500);
+                $('dt:has(.selected)').next('dd').animate({width:"0px"},500);
+                //dd가 세개가 0.5초 동안 시간을 다 소유한다.
+                $(this).next('dd').animate({width:"320px"},500);
+                $('dt span').removeClass('selected');
+                // $('span',this)
+                $(this).find('span').addClass('selected')
+            }
+        });
+
+        $('dl dt').hover(function(){
+            $(this).find('span').addClass('over');
+        
+        },
+        function() {
+            $(this).find('span').removeClass('over');
+        
+        });
+        })
+    
+</script>

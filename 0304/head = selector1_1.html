@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        // window.onload = function(){내용} : html과 css를 읽고 나서 실행해라
+        // window.onload = function(){내용}
+
+        // document.addEventListener('DOMContentLoaded',function(){내용} : html과 css를 읽고 나서 실행해라, 위와 같은 내용
+        document.addEventListener('DOMContentLoaded',function(){
+
+        // const element = document.getElementById('#myDIV'); 아래와 같음
+        const element = document.querySelector('#myDIV');
+        console.log(element.textContent);
+    
+        // const elements = document.getElementsByClassName("myclass"); 아래와 같음
+        const elements = document.querySelectorAll(".myclass");
+    
+        console.log(elements[0].textContent);
+        console.log(elements[1].textContent);
+    
+        const paragraphs = document.getElementsByTagName('p')
+        console.log(paragraphs[0].textContent)
+        console.log(paragraphs[1].textContent)
+    });
+    </script>
+</head>
+<body>
+    <div id="myDIV">Hello, Wodld</div>
+    <div class="myclass">First Div</div>
+    <div class="myclass">Second Div</div>
+    <p>Paragraph 1</p>
+    <p>Paragraph 2</p>
+</body>
+</html>
+

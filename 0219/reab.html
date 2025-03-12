@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{width: 200px; height: 200px;}
+        .box1{background-color: aquamarine;}
+        /* 빅박스에 position: relative;를 주면 박스2와 박스3가 빅박스 안에서 position: absolute하고 없애면 브라우저 전체 기준으로 position: absolute한다  */
+        .bigbox{position: relative;
+                width: 700px;
+                height: 500px;
+                border: 1px solid #333;
+                margin: 0 auto;}                
+        .box2{background-color: burlywood;
+                position: absolute;
+                right: 50px;
+                bottom: 50px;}
+        .box3{background-color: darkkhaki;
+        position: absolute;
+        right: 20px;
+        bottom: 30px;}
+        .box4{background-color: violet}
+        
+    </style>
+</head>
+<body>
+    <div class="box box1">박스1</div>
+    <div class="bigbox">
+        <div class="box box2">박스2</div>
+        <div class="box box3">박스3</div>
+    </div>
+    <div class="box box4">박스4</div>
+</body>
+</html>

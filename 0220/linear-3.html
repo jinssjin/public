@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div{width: 500px;
+        height: 300px;
+        border-radius: 10px;}
+        /* css3를 지원하지 않는 브라우저일 경우 빨간색 배경 */
+    .grad{background: #06f;
+        /* 위에서부터 파란색 30% 위치에 흰색 나머지 다시 파란색 */
+        /* 그라데이션 */
+        background: linear-gradient(to bottom, #06f, white 30%, #06f)}
+</style>
+<body>
+    <div class="grad"></div>
+</body>
+</html>

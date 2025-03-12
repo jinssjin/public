@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <span id="year">0000</span>년
+    <span id="month">00</span>월
+    <span id="date">00</span>일
+    <span id="nday">0</span>
+    <span id="hours">00</span>시
+    <span id="minutes">00</span>분
+    <span id="second">00</span>초
+
+    <script>
+        autotime()
+        setInterval(autotime,1000)
+
+    function autotime(){
+        var today = new Date();
+            var year = today.getFullYear();
+            var month = today.getMonth()+1;
+            var date = today.getDate();
+            var day = today.getDay();
+                switch (day) {
+                        case 0:
+                        day = "일요일"
+                        break;
+
+                        case 1:
+                        day = "월요일"
+                        break;
+
+                        case 2:
+                        day = "화요일"
+                        break;
+
+                        case 3:
+                        day = "수요일"
+                        break;
+
+                        case 4:
+                        day = "목요일"
+                        break;
+
+                        case 5:
+                        day = "금요일"
+                        break;
+                
+                    default:
+                        day = "토요일"
+                        break;
+                }
+
+            var hours = today.getHours();
+            var minutes = today.getMinutes();
+            var second = today.getSeconds();
+
+            document.getElementById('year').innerHTML = year;
+            document.getElementById('month').innerHTML = month;
+            document.getElementById('date').innerHTML = date;
+            document.getElementById('nday').innerHTML = day;
+            document.getElementById('hours').innerHTML = hours;
+            document.getElementById('minutes').innerHTML = minutes;
+            document.getElementById('second').innerHTML = second;
+    }
+    </script>
+</body>
+</html>

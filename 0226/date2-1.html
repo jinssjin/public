@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var today = new Date();
+            var year = today.getFullYear();
+            alert(year);
+            var month = today.getMonth()+1;
+            alert(month);
+            var date = today.getDate();
+            alert(date);
+            var day = today.getDay();
+                if(day===1){day="월요일"}
+                else if(day===2){day="화요일"}
+                else if(day===3){day="수요일"}
+                else if(day===4){day="목요일"}
+                else if(day===5){day="금요일"}
+                else if(day===6){day="토요일"}
+                else{day==="일요일"}
+                alert(day);
+
+            var hours = today.getHours();
+            alert(hours);
+            var minutes = today.getMinutes();
+            alert(minutes)
+
+
+    </script>
+</body>
+</html>

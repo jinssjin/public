@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{list-style: none;}
+        .tab_menu{display: flex;}
+        .tab_menu li{}
+
+    </style>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(".tab_menu li").function(){
+            $(".tab_menu li").click(function(){
+                var i = $(this).index()
+                $(".tab_menu li").removeClass(".on")
+                $(".tab_menu li").eq(i).addClass(".on")
+            
+                $(".tab_list li").removeClass(".active")
+                $(".tab_list li").eq(i).addClass(".active")
+            })
+        }
+    </script>
+</head>
+<body>
+    <ul class="tab_menu">
+        <li class="on">1번</li>
+        <li>2번</li>
+        <li>3번</li>
+        <li>4번</li>
+    </ul>
+    <ul class="tab_list">
+        <li class="active">난1번</li>
+        <li>난2번</li>
+        <li>난3번</li>
+        <li>난4번</li>
+    </ul>
+</body>
+</html>
