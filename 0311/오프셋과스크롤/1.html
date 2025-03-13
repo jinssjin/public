@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tab Example</title>
+    <style>
+        .active {
+            color: red; /* 활성화된 탭의 색상 */
+        }
+
+        .on {
+            display: block; /* 활성화된 내용 표시 */
+        }
+
+        #sanmenusub > ul {
+            display: none; /* 기본적으로 모든 내용 숨기기 */
+        }
+    </style>
+</head>
+<body>
+    <ul id="menus">
+        <li>Tab 1</li>
+        <li>Tab 2</li>
+        <li>Tab 3</li>
+    </ul>
+    <div id="sanmenusub">
+        <ul class="content">
+            <li>Content for Tab 1</li>
+        </ul>
+        <ul class="content">
+            <li>Content for Tab 2</li>
+        </ul>
+        <ul class="content">
+            <li>Content for Tab 3</li>
+        </ul>
+    </div>
+
+    <script>
+        const menus = document.querySelectorAll('#menus > li');  // 탭버튼
+        const sanmenusub = document.querySelectorAll('#sanmenusub > ul');  // 탭 내용
+
+        menus.forEach(function(tab, i) {
+            tab.addEventListener('click', function(e) {
+                e.preventDefault();  // 링크 금지
+
+                // 모든 li에서 .active 삭제
+                menus.forEach(function(item) {
+                    item.classList.remove('active');
+                });
+
+                // 선택한 li에 .active 추가
+                menus[i].classList.add('active');
+
+                // 모든 내용에서 .on 삭제
+                sanmenusub.forEach(function(item) {
+                    item.classList.remove('on');
+                });
+
+                // 선택한 li에 맞는 내용에 .on 추가
+                sanmenusub[i].classList.add('on');
+            });
+        });
+    </script>
+</body>
+</html>
