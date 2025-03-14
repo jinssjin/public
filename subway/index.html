@@ -12,6 +12,7 @@
 
 </head>
 <body>
+    <div class="wrap">
     <header>
         <div id="logo">
             <a href="#"><img src="img/logo_w.png" alt=""></a>
@@ -99,15 +100,16 @@
         </article>
         <article id="sanmenu">
             <h1>Subway's Menu</h1>
-            <ul id="menus">
+            <ul class="menus">
                 <li class="active">클래식</li>
                 <li>프레쉬&#38;라이트</li>
                 <li>프리미엄</li>
                 <li>아침메뉴</li>
             </ul>            
         </article>
-        <article id="sanmenusub">
-            <ul class="slider2 on" id="menuslider1">
+        <article class="sanmenusub">
+            <div class="frame">
+            <ul class="on" id="menuslider1">
                 <li>
                     <img src="img/me_cla1.jpg" alt="" width="270px" height="200px">
                     <h3>에그마요</h3>
@@ -143,12 +145,11 @@
                         풍부한 햄이 만들어내는<br>
                         입 안 가득</p>
                 </li>
-                <li>&#32;</li>
-                <li>&#32;</li>
-                <li>&#32;</li>
             </ul>
+            </div>
             <!-- 메뉴슬라이드 2번쨰 -->
-            <ul class="slider2" id="menuslider2">
+            <div class="frame">
+            <ul id="menuslider2">
                 <li>
                     <img src="img/me_freli1.jpg" alt="" width="270px" height="200px">
                     <h3>로티세리 바비큐 치킨</h3>
@@ -174,8 +175,10 @@
                         즐기는 깔끔한 한끼</p>
                 </li>
             </ul>
+            </div>
             <!-- 메뉴슬라이드 3번쨰 -->
-            <ul class="slider2" id="menuslider3">
+            <div class="frame">
+            <ul id="menuslider3">
                 <li>
                     <img src="img/me_pri1.jpg" alt="" width="270px" height="200px">
                     <h3>쉬림프</h3>
@@ -208,8 +211,10 @@
                         특제 데리야끼 소스와의 환상적인 만남</p>
                 </li>
             </ul>
+            </div>
             <!-- 메뉴슬라이드 4번쨰 -->
-            <ul class="slider2" id="menuslider4">
+            <div class="frame">
+            <ul id="menuslider4">
                 <li>
                     <img src="img/me_mo1.png" alt="" width="270px" height="200px">
                     <h3>햄, 에그&#38;치즈</h3>
@@ -222,6 +227,11 @@
                         더욱 신선한 하루 시작</p>
                 </li>
             </ul>
+            </div>
+            <div class="pager">
+                <div class="r_pager"></div>
+                <div class="l_pager"></div>
+            </div>
         </article>
         <article id="adv">
             <div class="box box1">
@@ -244,11 +254,18 @@
                     <span><a href="">more</a></span>
             </div>
             <div class="box box5">
-                <a href="#"><img src="img/sponbanner1.jpg" alt=""></a>
-                <a href="#"><img src="img/sponbanner2.jpg" alt=""></a>
-                <a href="#"><img src="img/sponbanner3.jpg" alt=""></a>
-                <a href="#"><img src="img/sponbanner4.jpg" alt=""></a>
-                <a href="#"><img src="img/sponbanner5.jpg" alt=""></a>
+                    <ul class="spon">
+                        <li><a href="#"></a></li>
+                        <li><a href="#"></a></li>
+                        <li><a href="#"></a></li>
+                        <li><a href="#"></a></li>
+                    </ul>
+                    <ul class="button">
+                        <li class='on'><a href="#"></a></li>
+                        <li><a href="#"></a></li>
+                        <li><a href="#"></a></li>
+                        <li><a href="#"></a></li>
+                    </ul>
             </div>
         </article>
         <article id="quickmenu">
@@ -292,7 +309,30 @@
             </ul>
         </article>
     </section>
-    
+    <footer>
+        <div class="up">
+            <ul>
+                <li><a href="#">이용약관</a></li>
+                <li><a href="#">개인정보처리방침</a></li>
+                <li><a href="#">써브카드</a></li>
+                <li><a href="#">점주관리자</a></li>
+            </ul>
+        </div>
+        <div class="down">
+            <p><span>서울시 서초구 강남대로 535 프린스빌딩 15층&#32;</span>
+                <span>대표 : INSOO CHO(인수조)&#32;</span>
+                    <span> 전화 : 02-797-5036&#32;</span>
+                        <span>사업자등록번호 : 101-84-04143&#32;</span>
+                </p>
+            <p>SUBWAY® is a Registered Trademark of Subway IP LLC. © 2021 Subway IP LLC. All Rights Reserved.
+                </p>
+        </div>
+        <div id="sns">
+            <p id="insta"><a href="#"></a></p>
+            <p id="faceb"><a href="#"></a></p>
+        </div>
+    </footer>
+</div>
 </body>
 </html>
 
