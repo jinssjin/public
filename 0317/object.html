@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 자바스크립트 객체
+        // 자바스크립트 객체 "키-값(속성)"의 쌍으로 이루어진 데이터 구조
+        const person = {
+            name : "Alice",
+            age : 25,
+            inStudent : false,
+            greet:function(){
+                document.write("Hello, my name is "+this.name)
+            }
+        };
+        document.write(person.name+ "<br/>");
+        document.write(person["age"]+ "<br/>");
+        person.greet();
+
+        // {
+        //     "name": "Alice",
+        //     "age": 25,
+        //     "isStudent": false
+        // }
+
+        // json data : 데이터를 저장하고 전송하는 형식
+        // json과 객체변환
+        // 1) json → 객체
+        const jsonString = '{"name": "Alice","age": 25,"isStudent": false}'
+        const obj = JSON.parse(jsonString);  // JSON → 객체로 변환
+        console.log(obj.name)  // 출력 : Alice
+
+        const person1 = {name : "Alice", age : 25, inStudent : false};
+        const jsonString1 = JSON.stringify(person1); // 객체 → JSON 변환
+        console.log(jsonString1)
+        // 출력 : {"name":"Alice","age":25,"inStudent":false}
+    </script>
+</body>
+</html>

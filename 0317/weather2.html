@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+<script>
+ $.getJSON("http://api.openweathermap.org/data/2.5/weather?id=1835848&appid=cd63accc133fc76e1f94a3f270442688&units=metric", function(data){
+   //alert(data.cod);
+    //alert(data.city.name);
+    //alert(data.list[0].main.temp);
+//forecast 예보를  - Weather
+//현재 온도
+//최고 온도
+//최저온도
+//아이콘
+var $cTemp = data.main.temp;
+var $maxTemp = data.main.temp_max;
+var $minTemp = data.main.temp_min;
+var $cDate = data.dt_txt; //날짜-시간
+var $wIcon = data.weather[0].icon;
+
+
+
+$(".ctemp").append( $cTemp);
+$('.clowtemp').append($minTemp);
+$('.chightemp').append($maxTemp);
+
+
+
+//alert($wIcon);
+// $('.cicon').append('<img src="https://openweathermap.org/img/wn/'+$wIcon+'@4x.png">');
+$('.cicon').append(`<img src="https://openweathermap.org/img/wn/${$wIcon}@2x.png">`);
+
+// 2025/03/17   16:08
+var $now = new Date();
+var $cDate = $now.getFullYear() + "/" + ($now.getMonth()+1) + "/" + $now.getDate() + " " + $now.getHours() + " : " + $now.getMinutes();
+$('h2').prepend($cDate);
+
+  });
+
+</script>
+
+
+</head>
+<body>
+    <h1>weather api</h1>
+    <h2> - 날씨예보 </h2>
+    <div class="ctemp">현재 온도: </div>
+    <div class="clowtemp">최저 온도: </div>
+    <div class="chightemp">최고 온도: </div>
+    <div class="cicon">아이콘 :</div>
+    <!-- <img src="https://openweathermap.org/img/wn/03d@2x.png" alt=""> -->
+    <!-- https://openweathermap.org/weather-conditions -->
+</body>
+</html>

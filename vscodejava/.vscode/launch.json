@@ -1,0 +1,539 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "App",
+            "request": "launch",
+            "mainClass": "App",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "Hellojava",
+            "request": "launch",
+            "mainClass": "a0312.Hellojava",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "Hellojava2",
+            "request": "launch",
+            "mainClass": "a0312.Hellojava2",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "Var1",
+            "request": "launch",
+            "mainClass": "a0312.Var1",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "Var2",
+            "request": "launch",
+            "mainClass": "a0312.Var2",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "Var3",
+            "request": "launch",
+            "mainClass": "a0312.Var3",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "Var4",
+            "request": "launch",
+            "mainClass": "a0312.Var4",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "Var5",
+            "request": "launch",
+            "mainClass": "a0312.Var5",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "Var6",
+            "request": "launch",
+            "mainClass": "a0312.Var6",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "Var7",
+            "request": "launch",
+            "mainClass": "a0312.Var7",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "Var8",
+            "request": "launch",
+            "mainClass": "a0312.Var8",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "Var8_1",
+            "request": "launch",
+            "mainClass": "a0312.Var8_1",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "VarEx2",
+            "request": "launch",
+            "mainClass": "a0312.VarEx2",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "VarEx2_1",
+            "request": "launch",
+            "mainClass": "a0312.VarEx2_1",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "VarEx3",
+            "request": "launch",
+            "mainClass": "a0312.VarEx3",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "VarEx4",
+            "request": "launch",
+            "mainClass": "a0312.VarEx4",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "VarEx5",
+            "request": "launch",
+            "mainClass": "a0312.VarEx5",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "VarEx6",
+            "request": "launch",
+            "mainClass": "a0312.VarEx6",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "Ari1",
+            "request": "launch",
+            "mainClass": "a0313.Ari1",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "Ari2",
+            "request": "launch",
+            "mainClass": "a0313.Ari2",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "Ari3",
+            "request": "launch",
+            "mainClass": "a0313.Ari3",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "Assign1",
+            "request": "launch",
+            "mainClass": "a0313.Assign1",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "Comp1",
+            "request": "launch",
+            "mainClass": "a0313.Comp1",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "Comp2",
+            "request": "launch",
+            "mainClass": "a0313.Comp2",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "Ex01",
+            "request": "launch",
+            "mainClass": "a0313.Ex01",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "Logical1",
+            "request": "launch",
+            "mainClass": "a0313.Logical1",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "Logical2",
+            "request": "launch",
+            "mainClass": "a0313.Logical2",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "Operadd1",
+            "request": "launch",
+            "mainClass": "a0313.Operadd1",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "Operadd2",
+            "request": "launch",
+            "mainClass": "a0313.Operadd2",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "Operate2",
+            "request": "launch",
+            "mainClass": "a0313.Operate2",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "Operate3",
+            "request": "launch",
+            "mainClass": "a0313.Operate3",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "Operate4",
+            "request": "launch",
+            "mainClass": "a0313.Operate4",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "Operator1",
+            "request": "launch",
+            "mainClass": "a0313.Operator1",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "DistanceEx",
+            "request": "launch",
+            "mainClass": "a0314.DistanceEx",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "Escape",
+            "request": "launch",
+            "mainClass": "a0314.Escape",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "Ex01(1)",
+            "request": "launch",
+            "mainClass": "a0314.Ex01",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "Ex02",
+            "request": "launch",
+            "mainClass": "a0314.Ex02",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "Ex03",
+            "request": "launch",
+            "mainClass": "a0314.Ex03",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "If1",
+            "request": "launch",
+            "mainClass": "a0314.If1",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "If1_1",
+            "request": "launch",
+            "mainClass": "a0314.If1_1",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "If1_2",
+            "request": "launch",
+            "mainClass": "a0314.If1_2",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "If3",
+            "request": "launch",
+            "mainClass": "a0314.If3",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "If3_1",
+            "request": "launch",
+            "mainClass": "a0314.If3_1",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "MoveRate",
+            "request": "launch",
+            "mainClass": "a0314.MoveRate",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "SamHang",
+            "request": "launch",
+            "mainClass": "a0314.SamHang",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "Samhang1",
+            "request": "launch",
+            "mainClass": "a0314.Samhang1",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "Scanner1",
+            "request": "launch",
+            "mainClass": "a0314.Scanner1",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "Scanner2",
+            "request": "launch",
+            "mainClass": "a0314.Scanner2",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "Scanner3",
+            "request": "launch",
+            "mainClass": "a0314.Scanner3",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "Scanner4",
+            "request": "launch",
+            "mainClass": "a0314.Scanner4",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "Swich1",
+            "request": "launch",
+            "mainClass": "a0314.Swich1",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "Swich2",
+            "request": "launch",
+            "mainClass": "a0314.Swich2",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "Swich3",
+            "request": "launch",
+            "mainClass": "a0314.Swich3",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "Swich4",
+            "request": "launch",
+            "mainClass": "a0314.Swich4",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "Swich5",
+            "request": "launch",
+            "mainClass": "a0314.Swich5",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "homework",
+            "request": "launch",
+            "mainClass": "a0314.homework",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "Break1",
+            "request": "launch",
+            "mainClass": "a0317.Break1",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "Break1_1",
+            "request": "launch",
+            "mainClass": "a0317.Break1_1",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "Break2",
+            "request": "launch",
+            "mainClass": "a0317.Break2",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "Break3",
+            "request": "launch",
+            "mainClass": "a0317.Break3",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "Continue1",
+            "request": "launch",
+            "mainClass": "a0317.Continue1",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "Do_While1_1",
+            "request": "launch",
+            "mainClass": "a0317.Do_While1_1",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "Ex01(2)",
+            "request": "launch",
+            "mainClass": "a0317.Ex01",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "Ex02(1)",
+            "request": "launch",
+            "mainClass": "a0317.Ex02",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "Ex03(1)",
+            "request": "launch",
+            "mainClass": "a0317.Ex03",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "Ex03_1",
+            "request": "launch",
+            "mainClass": "a0317.Ex03_1",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "Ex04",
+            "request": "launch",
+            "mainClass": "a0317.Ex04",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "Ex05",
+            "request": "launch",
+            "mainClass": "a0317.Ex05",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "For1",
+            "request": "launch",
+            "mainClass": "a0317.For1",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "For2",
+            "request": "launch",
+            "mainClass": "a0317.For2",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "Nested1",
+            "request": "launch",
+            "mainClass": "a0317.Nested1",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "While",
+            "request": "launch",
+            "mainClass": "a0317.While",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "While2",
+            "request": "launch",
+            "mainClass": "a0317.While2",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "While2_1",
+            "request": "launch",
+            "mainClass": "a0317.While2_1",
+            "projectName": "vscodejava_30e3671f"
+        },
+        {
+            "type": "java",
+            "name": "break2",
+            "request": "launch",
+            "mainClass": "a0317.break2",
+            "projectName": "vscodejava_30e3671f"
+        }
+    ]
+}

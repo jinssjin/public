@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+
+</head>
+<body>
+    <h1>weather api</h1>
+    <h2> - 날씨예보</h2>
+    <div class="ctemp">현재 온도: </div>
+    <div class="clowtemp">최저 온도: </div>
+    <div class="chightemp">최고 온도: </div>
+    <div class="cicon">아이콘 :</div>
+    <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="">
+</body>
+</html>
+
+<script>
+    $.getJSON("http://api.openweathermap.org/data/2.5/forecast?id=1835848&appid=445d155d328ef18ca7d6a1570608194b&units=metric", function(data){
+        // alert(data.cod);
+        //  alert(data.city.name);
+        // alert(data.list[0].main.temp);
+        var $cTemp = data.list[0].main.temp;
+        var $maxTemp = data.list[0].main.temp_max;
+        var $mintemp = data.list[0].main.temp_min;
+        var $cDate = data.list[0].dt.txt;
+        var $wIcon = data.list[0].weather[0].icon  ;
+    
+        $(".ctemp").append($cTemp);
+        $(".clowtemp").append($minTemp);
+        $(".chightemp").append($maxTemp);
+        $('h2').prepend($cDate);
+        $('.cicon').append('<img src="https://openweathermap.org/img/wn/'+$wIcon+'@4x.png">'); // 4x 크기
+    
+    });
+        </script>

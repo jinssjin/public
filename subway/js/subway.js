@@ -24,31 +24,31 @@ $(function(){
 
 // 메뉴 선택
 
-const menus1 = document.querySelectorAll('.menus > li');  // 탭버튼
-const sanmenusub1 = document.querySelectorAll('.sanmenusub > ul');  // 탭 내용
+// const menus1 = document.querySelectorAll('.menus > li');  // 탭버튼
+// const sanmenusub1 = document.querySelectorAll('.sanmenusub > ul');  // 탭 내용
 
-menus1.forEach(function(tab,i){
-    tab.addEventListener('click',function(e){
+// menus1.forEach(function(tab,i){
+//     tab.addEventListener('click',function(e){
         
-        // 색이 바뀜
-        menus1.forEach(function(item){
-            // 기존에 있던 색 없애기
-            item.classList.remove('active');
-        });
+//         // 색이 바뀜
+//         menus1.forEach(function(item){
+//             // 기존에 있던 색 없애기
+//             item.classList.remove('active');
+//         });
            
-            // 선택한 ul에 색 넣기
-         menus1[i].classList.add('active');
+//             // 선택한 ul에 색 넣기
+//          menus1[i].classList.add('active');
 
-        // 내용이 바뀜
-        sanmenusub1.forEach(function(item){
-            // div 없애기
-            item.classList.remove('on');
-        });
+//         // 내용이 바뀜
+//         sanmenusub1.forEach(function(item){
+//             // div 없애기
+//             item.classList.remove('on');
+//         });
 
-        // li에 맞는 div 나오기
-        sanmenusub1[i].classList.add('on');
-    });
-});
+//         // li에 맞는 div 나오기
+//         sanmenusub1[i].classList.add('on');
+//     });
+// });
 
 // 세부메뉴 슬라이드
 
