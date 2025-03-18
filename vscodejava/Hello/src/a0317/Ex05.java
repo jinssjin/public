@@ -37,7 +37,8 @@ public class Ex05 {
                     break;
             }
             System.out.println();    
+            System.out.println("프로그램 종료");
         }
-        System.out.println("프로그램 종료");
+        
     }
 }

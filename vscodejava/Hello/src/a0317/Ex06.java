@@ -31,7 +31,7 @@ public class Ex06 {
                     System.out.println(b-c);
                     break;
                 case 3:
-                    System.out.pri1ntln(b*c);
+                    System.out.println(b*c);
                     break;
                 case 4:
                     System.out.println(b/c);
