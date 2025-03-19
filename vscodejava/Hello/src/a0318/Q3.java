@@ -24,6 +24,11 @@ public class Q3 {
                 }
                 return n * factorial(n-1);
             }
+
+            private static int factorial(int n) {
+                for(int i=0;i<=n;i++){
+                    return result = i * n; 
+                }
     }
 
     // factorial(5) = 5 * factorial(4) ← return 5 * factorial(5-1);
