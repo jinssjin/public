@@ -31,10 +31,23 @@ public class Search {
                 System.out.println("숙박하려는 숙소 이름을 입력하시오");
                 String AccName = scanner.nextLine();
                 if(manager.BookingList(AccName)){
-                    
-                }
+                    System.out.println("선택하신 숙소가 정상적으로 예약되었습니다.");
+                }else{System.out.println("선택하신 숙소를 찾을 수 없습니다.");}
                     break;
-            
+                case 3:
+                System.out.println("3. 예약한 숙소 보기");
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+                case 6:
+                    break;
+                case 7:
+                    break;
+                case 8:
+                    flag = false;
+                    break;
                 default:
                     break;
             }

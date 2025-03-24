@@ -24,7 +24,14 @@ public class AccommodationManager {
     }
 
     public boolean BookingList(String accName) {
-        for(Accommodation accName:bookingcomplitelist);
+        for(Accommodation name:bookingcomplitelist){
+            if(name.getName().equalsIgnoreCase(accName) && name.isAvailable()){
+                name.booking();
+                bookingcomplitelist.add(name);
+                return true;
+            }
+        }
+        return false;
     }
 
 
