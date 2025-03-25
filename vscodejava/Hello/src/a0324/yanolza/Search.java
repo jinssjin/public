@@ -36,15 +36,45 @@ public class Search {
                     break;
                 case 3:
                 System.out.println("3. 예약한 숙소 보기");
+                manager.bookingcomplitelists();
                     break;
                 case 4:
+                System.out.println("4. 숙소 추가하기");
+                System.out.println("추가할 숙소의 이름을 입력하세요");
+                String newAccName = scanner.nextLine();
+                System.out.println("추가할 숙소의 위치를 입력하세요");
+                String newAccLocation = scanner.nextLine();
+                System.out.println("추가할 숙소의 가격을 입력하세요");
+                double newAccPrice = scanner.nextInt();
+                scanner.nextLine();
+                manager.addAccommodationlist(newAccName,newAccLocation,newAccPrice);
+                System.out.println("숙소추가 완료");
                     break;
                 case 5:
+                System.out.println("5. 숙소 삭제하기");
+                System.out.print("삭제하려는 숙소 이름을 적어 주세요 : ");
+                String delAcc = scanner.nextLine();
+                if(delAcc.equalsIgnoreCase("")){
+                    System.out.println("삭제하려는 숙소 이름을 다시입력 \n 이름?>>");
+                    delAcc = scanner.nextLine();
+                }else{
+                manager.deleteAcc(delAcc);
+                System.out.println("삭제 완료");}
                     break;
-                case 6:
-                    break;
-                case 7:
-                    break;
+                //  case 6:
+                //  System.out.println("6. 숙소 정보 수정하기");
+                //  System.out.println("수정시작");
+                //  System.out.println("수정하려는 숙소이름을 입력하시오");
+                //  String UpdateAcc = scanner.nextLine();
+                //  if(UpdateAcc.equalsIgnoreCase("")){
+                //     System.out.println("수정하려는 숙소 이름을 다시입력 \n 이름?>>");}
+                //  manager.UpdatingAcc(UpdateAcc);
+                //  System.out.println("수정 완료");
+                
+                 
+                     // break;
+                // case 7:
+                //     break;
                 case 8:
                     flag = false;
                     break;

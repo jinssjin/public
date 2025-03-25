@@ -24,7 +24,7 @@ public class AccommodationManager {
     }
 
     public boolean BookingList(String accName) {
-        for(Accommodation name:bookingcomplitelist){
+        for(Accommodation name:accommodationlist){
             if(name.getName().equalsIgnoreCase(accName) && name.isAvailable()){
                 name.booking();
                 bookingcomplitelist.add(name);
@@ -34,5 +34,37 @@ public class AccommodationManager {
         return false;
     }
 
+    public void bookingcomplitelists(){
+        System.out.println("예약한 숙소");
+        for(Accommodation bookedAcc : bookingcomplitelist){
+            System.out.println(bookedAcc);
+        }
+    }
+
+    public void addAccommodationlist(String newAccName, String newAccLocation, double newAccPrice){
+        Accommodation additionalAcc = new Accommodation(newAccName,newAccLocation,newAccPrice);
+        accommodationlist.add(additionalAcc);
+    }
+
+    public void deleteAcc(String delAcc) {
+        boolean result = false;
+        for(Accommodation hotel:accommodationlist){
+            if(hotel.getName().equalsIgnoreCase(delAcc)){
+                if(hotel.isAvailable()){
+                    accommodationlist.remove(hotel);
+                    result = true;
+                    break;
+                }else{
+                    result = false;
+                    break;
+                }
+            }
+        }
+        if(result){
+            System.out.println("삭제됨");
+        }else{
+            System.out.println("삭제 안됨");
+        }
+    }
 
 }

@@ -43,8 +43,8 @@ public class Accommodation {
 
     @Override
     public String toString() {
-        return "숙소 이름 : " + name + ", 숙소 위치 : " + location + ", 숙소 가격 : " + price + ", 숙박여부"
-                + (available ? "숙박가능" : "숙박불가능") + "]";
+        return "숙소 이름 : " + name + ", 숙소 위치 : " + location + ", 숙소 가격 : " + price + ", 숙박여부 : "
+                + (available ? "숙박가능" : "숙박불가능");
     }
 
     public void booking(){

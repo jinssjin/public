@@ -4,4 +4,34 @@
     "java.project.referencedLibraries": [
         "lib/**/*.jar"
     ]
+    
 }
+
+{
+    "files.encoding": "utf8",
+    "files.autoGuessEncoding": true,
+    "java.configuration.file.encoding": "UTF-8",
+    "[java]": {
+        "files.encoding": "utf8"
+    }
+}
+
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}",
+            "vmArgs": [
+                "-Dfile.encoding=UTF-8"
+            ]
+        }
+    ]
+}
+
+{
+    "editor.fontFamily": "'D2Coding', '나눔고딕', '맑은 고딕', Consolas, 'Courier New', monospace"
+  }
+  

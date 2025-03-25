@@ -55,16 +55,42 @@ public class Search {
                     break;
                 case 5:
                     System.out.println("도서 삭제하기");
-                    
+                    System.out.print("삭제하려는 도서 이름을 적어 주세요 : ");
+                    String dname = scan.nextLine();
+                    if(dname.equals("")){  // equals("") : 비어있다는 뜻
+                        System.out.println("삭제하려는 도서 이름을 다시입력 \n 이름?>>");
+                    } 
+                    manager.delLibrary(dname);
+                    System.out.println("삭제 끝");
                     break;
                 case 6:
-                    System.out.println("대출 가능한 도서");
+                    System.out.println("6.도서 정보 수정하기");
+                    System.out.println("수정 시작");
+                    System.out.print("수정하려는 도서 이름을 적어 주세요 : ");
+                    String uname = scan.nextLine();
+                    if(uname.equalsIgnoreCase("")){
+                        System.out.println("수정하려는 도서 이름을 다시입력 \n 이름?>>");
+                        manager.updateLibrary(uname);
+                        System.out.println("수정 끝");
+                    }
                     break;
                 case 7:
-                    System.out.println("대출 가능한 도서");
+                    System.out.println("7.도서 내용 보기");
+                    System.out.println("조회시작 \n 도서 이름 입력");
+                    String sname = scan.nextLine();
+                    if(sname.equals("")){
+                        System.out.println("조회하려는 도서 이름을 다시 입력 \n 이름??>>");
+                        sname = scan.nextLine();
+                    }
+                    manager.showLibrary(sname);
+                    System.out.println("조회 끝");
+
                     break;
                 case 8:
+                System.out.println("종료");
                     flag = false;
+                    scan.close();
+                    System.exit(0);
                     break;
             
                 default:
