@@ -1,6 +1,7 @@
 package a0324.yanolza;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class AccommodationManager {
 
@@ -64,6 +65,64 @@ public class AccommodationManager {
             System.out.println("삭제됨");
         }else{
             System.out.println("삭제 안됨");
+        }
+    }
+
+    public void UpdatingAcc(String updateAcc) {
+            int i = 0;
+            int index = -1;
+            int menu = -1;
+            boolean flag = true;
+            Scanner scan = new Scanner(System.in);
+            Accommodation newA = new Accommodation();
+            // System.out.println(updateAcc);
+        for(Accommodation accommodationupdate : accommodationlist){
+            i++;
+            if(accommodationupdate.getName().equalsIgnoreCase(updateAcc)){
+                index = i-1;
+                newA = accommodationupdate;
+            }
+            // System.out.println(accommodationupdate.getName().equalsIgnoreCase(updateAcc)+" "+accommodationupdate.getName()+" "+updateAcc);
+        }
+        if(index != -1){
+            System.out.print("뭘 수정할건데?\n 1.숙소 이름 \t 2.숙소 위치 \t 3.숙소 가격 \n >>");
+            menu = scan.nextInt();
+            scan.nextLine();
+            while (flag) {
+                switch (menu) {
+                    case 1:
+                        System.out.println("수정할 숙소 이름");
+                        newA.setName(scan.nextLine());
+                        accommodationlist.set(index, newA);
+                        flag = false;
+                        break;
+                    case 2:
+                    System.out.println("수정할 숙소 위치");
+                    newA.setLocation(scan.nextLine());
+                    accommodationlist.set(index, newA);
+                    flag = false;
+                    break;
+                    case 3:
+                    System.out.println("수정할 숙소 가격");
+                    newA.setPrice(scan.nextDouble());
+                    accommodationlist.set(index, newA);
+                    flag = false;
+                    break;
+                    default:
+                    System.out.println("1~3번 중에 입력하세요");
+                        break;
+                }
+            }
+        }else{
+            System.out.println("찾는 숙소가 없어서 업데이트할 수 없습니다.");
+        }
+    }
+
+    public void infomateAcc(String infoAcc) {
+        for(Accommodation searchAcc:accommodationlist){
+            if(searchAcc.getName().equalsIgnoreCase(infoAcc)){
+                System.out.println(searchAcc);
+            }
         }
     }
 

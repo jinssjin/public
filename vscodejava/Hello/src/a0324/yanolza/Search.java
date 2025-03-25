@@ -61,20 +61,27 @@ public class Search {
                 manager.deleteAcc(delAcc);
                 System.out.println("삭제 완료");}
                     break;
-                //  case 6:
-                //  System.out.println("6. 숙소 정보 수정하기");
-                //  System.out.println("수정시작");
-                //  System.out.println("수정하려는 숙소이름을 입력하시오");
-                //  String UpdateAcc = scanner.nextLine();
-                //  if(UpdateAcc.equalsIgnoreCase("")){
-                //     System.out.println("수정하려는 숙소 이름을 다시입력 \n 이름?>>");}
-                //  manager.UpdatingAcc(UpdateAcc);
-                //  System.out.println("수정 완료");
+                  case 6:
+                  System.out.println("6. 숙소 정보 수정하기");
+                  System.out.println("수정시작");
+                  System.out.println("수정하려는 숙소이름을 입력하시오");
+                 String UpdateAcc = scanner.nextLine();
+                 if(UpdateAcc.equalsIgnoreCase("")){
+                    System.out.println("수정하려는 숙소 이름을 다시입력 \n 이름?>>");}
+                 manager.UpdatingAcc(UpdateAcc);
+                 System.out.println("수정 완료");
                 
                  
-                     // break;
-                // case 7:
-                //     break;
+                     break;
+                 case 7:
+                System.out.println("7. 숙소 정보 조회하기");
+                System.out.println("조회시작 \n 숙소 이름 입력");
+                String accInfo = scanner.nextLine();
+                if(accInfo.equalsIgnoreCase("")){
+                    System.out.println("조회하려는 숙소 이름을 다시입력 \n 이름?>>");}
+                    manager.infomateAcc(accInfo);
+                    System.out.println("조회 끝");
+                     break;
                 case 8:
                     flag = false;
                     break;
