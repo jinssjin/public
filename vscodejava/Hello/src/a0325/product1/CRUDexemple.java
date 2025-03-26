@@ -1,6 +1,7 @@
 package a0325.product1;
 
-import java.util.Scanner;
+import java.util.*;
+
 
 public class CRUDexemple {
     public static void main(String[] args) {
