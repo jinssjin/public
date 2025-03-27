@@ -34,8 +34,17 @@
 {
     "editor.fontFamily": "'D2Coding', '나눔고딕', '맑은 고딕', Consolas, 'Courier New', monospace"
   }
+<<<<<<< HEAD
   
   {
     "terminal.integrated.encoding": "utf8"
 
   }
+=======
+
+
+  {
+    "terminal.integrated.encoding": "UTF-8"
+  }
+  
+>>>>>>> 77be313d2bcbbc5c30ff2b97bb29b3199be3a5b5
