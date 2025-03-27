@@ -35,3 +35,7 @@
     "editor.fontFamily": "'D2Coding', '나눔고딕', '맑은 고딕', Consolas, 'Courier New', monospace"
   }
   
+  {
+    "terminal.integrated.encoding": "utf8"
+
+  }
