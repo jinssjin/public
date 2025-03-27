@@ -84,9 +84,12 @@ public class Brain implements Interface {
             if(word.isEmpty()){
                 System.out.println("저장된 단어가 없어요");
             }else{
-                for(Map.Entry<String,String> entry:word.entrySet()){
-                    System.out.println("※     "+entry.getKey()+" : "+entry.getValue());
+                // for(Map.Entry<String,String> entry:word.entrySet()){
+                //     System.out.println("※     "+entry.getKey()+" : "+entry.getValue());
+                for(String delword:word.keySet()){
+                    System.out.println("※     "+delword+" : "+word.get(delword));
                 }
+                //}
             }
             System.out.println("===========================");
             System.out.print("삭제하고 싶은 단어를 입력하세요 (목록으로 돌아가려면 'Menu'입력) : ");
