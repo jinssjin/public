@@ -37,15 +37,20 @@ public class MainClass_Book {
                 case 5:
                     books.listBook();
                     break;
-                // case 6:
-                //     books.saveBook();
-                //     break;
-                // case 7:
-                //     books.loadBook();
-                //     break;
-                // case 0:
+                case 6:
+                    try {
+                        books.saveBook();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                     
-                    //break;
+                    break;
+                case 7:
+                    books.loadBook();
+                    break;
+                case 0:
+                    System.out.println("종료");
+                    break;
             
                 default:
                     break;

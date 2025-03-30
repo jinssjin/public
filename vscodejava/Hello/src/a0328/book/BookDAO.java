@@ -98,13 +98,31 @@ public class BookDAO {
         int index = findISBN();
         System.out.println("새로운 가격 입력");
         System.out.print(">>");
-        double newPrice = scan.nextDouble()
+        double newPrice = scan.nextDouble();
         books.get(index).setPrice(newPrice);
     }
 
     public void listBook() {
         for(int i=0; i < books.size(); i++){
             System.out.println(books.get(i).toString());
+        }
+    }
+
+    public void saveBook() throws Exception{
+        file.create();
+        String str = "";
+        
+        for(int i = 0; i < books.size(); i++){
+            str += books.get(i)+"\n";
+        }
+        file.write(str);
+    }
+
+    public void loadBook() {
+        try {
+            file.read();
+        } catch (Exception e) {
+            System.out.println("파일 이름을 확인하여주세요");
         }
     }
 }
