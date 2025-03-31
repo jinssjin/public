@@ -49,7 +49,7 @@ public class MainClass_Book {
                     books.loadBook();
                     break;
                 case 0:
-                    System.out.println("종료");
+                    System.out.println("프로그램 종료");
                     break;
             
                 default:
