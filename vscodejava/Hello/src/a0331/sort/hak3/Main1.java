@@ -1,4 +1,4 @@
-package a0331.hak3;
+package a0331.sort.hak3;
 
 import java.util.ArrayList;
 import java.util.Collections;

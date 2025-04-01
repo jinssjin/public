@@ -23,7 +23,7 @@ public class StoreService {
         customer = new Customer(orderNum);
         book.getMenu();
         order();
-        totalOrder();
+        totalOrder(customer);
         try {
             System.out.println("구매하신 도서가 나옵니다");
             t.sleep(2000);
@@ -34,14 +34,27 @@ public class StoreService {
     }
 
     private void end() {
-
+        int s = 1;
+        StringBuffer message = new StringBuffer();
+        message.append("\n\n ")
+                    .append("+----------------------------------------------------+\n ")
+                    .append("|                                                    | \n ")
+                    .append("|           " + customer.getOrderName() + " 고객님 주문하신 도서 나왔습니다         | " + "\n");
+            System.out.print(message);
+            for (Map.Entry<String, Integer> order : customer.getBookOrder().entrySet()) {
+                System.out.printf(" | [%d] %-20s : %2d잔  %7s |\n", s, order.getKey(), order.getValue(), "");
+                s++;
+            }
+            System.out.println(" |                                                    |");
+            System.out.println(" +----------------------------------------------------+");
+        
     }
 
     private void order() {
         System.out.println("\n취소를 원하시면 0번을 눌러주세요");
         end:while (true) {
             try {
-                System.out.println("\n원하시는 음료의 번호를 선택해주세요");
+                System.out.println("\n원하시는 도서의 번호를 선택해주세요");
                 String choice = scan.next();
                 int choiceNum = Integer.parseInt(choice.substring(0,1));
                 if(choiceNum==0){
@@ -112,7 +125,33 @@ public class StoreService {
             int bookUnitPrice = book.menu.get(bookName);
             bookPrice = bookUnitPrice * orderCount;
             totalMoney = totalMoney + bookPrice;
+            String pay = f.format(bookPrice);
+            message.append(String.format(" | [%d] %-20s : %2d권  %7s |\n", s, bookName, orderCount, pay));
+            s++;
+        }
+        message.append(" |                                                    |\n ")
+        .append("+----------------------------------------------------+ \n")
+        .append(" ============ 총 결제 금액은 " + f.format(totalMoney) + "입니다 ========== \n");
+        System.out.println(message);
+        payment(totalMoney);
+    }
 
+    private void payment(int totalMoney) {
+        System.out.println("결재를 도와드리겠습니다. 카드를 넣어주세요");
+        int payResult = customer.getMoney() -totalMoney;
+        try {
+            t.sleep(2500);
+            System.out.println("결재중입니다......");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        if(payResult<0){
+            System.out.println("잔액이 부족합니다. 확인 후 다시 주문해주세요");
+        }else{
+            customer.setMoney(payResult);
+            System.out.println("결재가 완료되었습니다.");
+            System.out.println("이용해주셔서 감사합니다.");
+            orderNum++;
         }
     }
 }

@@ -1,4 +1,4 @@
-package a0331.hak1;
+package a0331.sort.hak1;
 
 public class Compare1 {
     public static void main(String[] args) {
