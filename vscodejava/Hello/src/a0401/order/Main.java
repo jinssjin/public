@@ -96,16 +96,16 @@ public class Main {
         // 여기에 답을 작성하세요.
 
         // 문제 1: 서울에 사는 고객의 주문만 출력하시오
-        System.out.println("서울에 사는 고객의 주문리스트");
-        orderToSeoul_q1(orders);
-        System.out.println();
-        System.out.println();
+            System.out.println("서울에 사는 고객의 주문리스트");
+            orderToSeoul_q1(orders);
+            System.out.println();
+            System.out.println();
 
         // 문제 2: 모든 주문의 총 수량을 구하시오.(mapToInt사용)
-        System.out.println("모든 주문의 총 수량");
-        orderProductCount_q2(orders);
-        System.out.println();
-        System.out.println();
+            System.out.println("모든 주문의 총 수량");
+            orderProductCount_q2(orders);
+            System.out.println();
+            System.out.println();
 
         // 문제 3: 각 고객의 이름과 그 고객이 주문한 제품명을 출력하시오.
             System.out.println("각 고객의 이름-제품명 출력");
@@ -139,10 +139,25 @@ public class Main {
 
         // 문제 8.각 도시별로 고객 수를 출력하시오. (count이용)
             System.out.println("도시별 고객수");
+            cityToCustomer(orders);
 
         }
 
         
+        private static void cityToCustomer(List<Order> orders) {
+            long busanCount = orders.stream()
+            .filter(bu -> "Busan".equals(orders))
+            .count();
+
+            long seoulCount = orders.stream()
+            .filter(se -> "Seoul".equals(orders))
+            .count();
+
+            
+
+        }
+
+
         private static void orderRange(List<Order> orders) {
             List<Order> result = orders.stream()
             .sorted(Comparator.comparing(Order::getQuantity))
