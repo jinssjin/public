@@ -7,7 +7,7 @@ public class Passenger {
     private String name;
     private int birthDate; // 생년월일 831016
     private String pw;     // 예약 비밀번호
-    private String seat;   // 좌석
+    private String seat;   // 승객이 선택한 좌석 번호
 
     public Passenger(String name, int birthDate) {
         this.name = name;
@@ -69,4 +69,22 @@ public class Passenger {
         int age = Period.between(birthDate2, currentDate).getYears();
         return age > 15;
     }
+
+    // 더 정확한 함수
+    // public boolean isEligibleForInternationalFlight() {
+    //     int y = birthDate / 10000;
+    //     int m = (birthDate % 10000) / 100;
+    //     int d = birthDate % 100;
+    
+    //     y = (y > 0 && y <= 24) ? y + 2000 : y + 1900;
+    
+    //     LocalDate birthDate2 = LocalDate.of(y, m, d);
+    //     LocalDate currentDate = LocalDate.now();
+    //     int age = Period.between(birthDate2, currentDate).getYears();
+    
+    //     return age > 15;
+    // }
+
 }
+
+

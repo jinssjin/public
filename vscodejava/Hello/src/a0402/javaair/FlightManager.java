@@ -27,6 +27,7 @@ public class FlightManager {
     }
     public String airplane = "                       |                      \n" + "                      _|_                     \n" + "                    /_____\\                  \n" + "                   /oo   oo\\                 \n" + " \\_________________\\       /_________________/\n" + "  `-------|---|-----\\_____/-----|---|-------'\n" + "         ( ) ( )  O|OOo|oOO|O  ( ) ( )   \n";
     
+    
     public void displayFlightList(String str) {
         // 항공편 목록이 출력 -> flight에서 toString 이용해서
         System.out.println("==============================="+str+"===============================");
@@ -38,10 +39,10 @@ public class FlightManager {
         System.out.println("===================================================================");
     }
 
-    public void bookFlight() throws InterruptedException {
+    public void bookFlight() throws InterruptedException {  // InterruptedException는 Tread를 쓰기 위해서 예외를 사용
         // 국제선 - 사용자 이름, 생년월일 받아서 나이 확인하고 만 15세 미만은 예약 거절
         for(;;){  // 무한루프  
-            displayFlightList("항공편예매");  // 메서드 안에 들어갈 String이 쓸 떄마다 달라져서 직접"안에 입력
+            displayFlightList("항공편예매");  // 메서드 안에 들어갈 String이 쓸 떄마다 달라져서 직접""안에 입력
             System.out.print("예매할 항공편 입력 > ");
             try {
                 int bookNum = Integer.parseInt(scan.next());
@@ -56,7 +57,7 @@ public class FlightManager {
                 System.out.println("===================================================================");
                 System.out.println(bookNum + "" + flights.get(bookNum-1));
                 System.out.println("===================================================================");
-                Flight sf = flights.get(bookNum-1);
+                Flight sf = flights.get(bookNum-1);  // 선택한 항권편 객체를 sf에 저장
                 if(flights.get(bookNum-1).isInternationalFlight()){ // 국제선이면
                     System.out.println("국제선은 만15세이상 예매가능");
                     passengerInfo(sf);
@@ -124,10 +125,10 @@ public class FlightManager {
             if(!p.man15(p) && flight.isInternationalFlight()){  // 15세 미만이면서 국제선이면
                 System.out.println("만 15세 미만은 국제선 예약이 불가합니다.");
             }else{
-                System.out.println("결제 비밀 번호");
+                System.out.print("결제 비밀번호 : ");
                 String pw = scan.next();
-                p = new Passenger(name, birthDate, pw);
-                passengers.add(p);  // 항공 예약 명단에 추가
+                Passenger p2 = new Passenger(name, birthDate, pw);
+                passengers.add(p2);  // 항공 예약 명단에 추가
             }
             
         } catch (DateTimeException e) {
@@ -143,8 +144,8 @@ public class FlightManager {
     private void checkPassword(int index) {
         for(;;){
             if(index != -1){
-                System.out.println("결제 비밀번호");
-                String pw = scan.next();
+                System.out.print("결제 비밀번호 : ");
+                String pw = scan.next(); // 비밀번호 키보드 입력
                 System.out.println();
                 if(passengers.get(index).getPw().equals(pw)){
                     System.out.println("비밀번호가 일치합니다.");
@@ -155,22 +156,23 @@ public class FlightManager {
         }
     }
 
-    private String ticketPrint(Map<String,Flight> reservationMap, String name) {
+    String ticketPrint(Map<String, Flight> reservationMap, String name) {
         int index = -1;
-        if(passengers != null){
-            for(int i=0; i <passengers.size();i++){
-                if(passengers.get(i).getName().equals(name)){
-                    index = i;
-                }
-            }
-        }
-    int seat = Integer.parseInt(passengers.get(index).getSeat())+1;
-    return  "ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ\n\n" +
-            "\t" + name + "님의 티켓정보" +
-            "| 좌석 : " + seat + "번\n"+
-            "." + reservationMap.get(name) + "\n\n" +
-            "ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ";
-}
+         if(passengers != null){
+             for(int i = 0; i < passengers.size();i++){
+                 if(passengers.get(i).getName().equals(name)){
+                     index = i;
+                 }
+             }
+         }
+         // reservationMap("이미리","방콕에관한항공편")
+         int seat = Integer.parseInt(passengers.get(index).getSeat())+1;
+         return  "ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ\n\n" +
+                 "\t" + name + "님의 티켓정보" +
+                 "| 좌석 : " + seat + "번\n"+
+                 "." + reservationMap.get(name) + "\n\n" +
+                 "ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ";
+     }
 
     private int search(String str) {
         System.out.println("===================== " + str + " =====================");
@@ -186,5 +188,21 @@ public class FlightManager {
                 }
             }
             return index;
+    }
+
+    public void ticketSave() {
+        int index = search("티켓조회");
+        checkPassword(index);
+        fc.ticketSaveFile(reservationMap,passengers.get(index).getName());
+    }
+
+    // 항공편 목록(flights)을 외부에서 접근하는 getter 메서드
+    public static ArrayList<Flight> getFlights() {
+        return flights;
+    }
+
+    // 예약정보 목록(reservationMap)을 외부에서 접근하는 getter 메서드
+    public static Map<String,Flight> getReservationMap() {
+        return reservationMap;
     }
 }
