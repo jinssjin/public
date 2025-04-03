@@ -21,8 +21,17 @@ public class FileC {
 
     public void ticketSaveFile(Map<String,Flight> reservationMap, String name) {
         try {
+            String folderPath = "d:\\ticket";
+            File folder = new File(folderPath);
+            if(!folder.exists()){  // 폴더없으면
+                if(folder.mkdirs()){  // mkdirs() 폴더생성메서드
+                    System.out.println("폴더 생성됨"+folderPath);
+            }else{
+                System.out.println("폴더 생성 실패");
+                return;
+            }}
             File file = new File("d:\\ticket\\ticket.txt");
-            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file));
+            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file,true));  //Writer ()안에 ,true 넣어주면 데이터 누적
             // BufferedWriter를 사용하여 file에 데이터를 쓸 준비
             // FileWriter는 기본적으로 기존파일을 덮어씁니다.
             if(file.isFile() && file.canWrite()){

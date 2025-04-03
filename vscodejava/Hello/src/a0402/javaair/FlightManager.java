@@ -171,7 +171,7 @@ public class FlightManager {
                  "\t" + name + "님의 티켓정보" +
                  "| 좌석 : " + seat + "번\n"+
                  "." + reservationMap.get(name) + "\n\n" +
-                 "ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ";
+                 "ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ\n\n";
      }
 
     private int search(String str) {

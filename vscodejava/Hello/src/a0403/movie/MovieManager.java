@@ -1,6 +1,7 @@
 package a0403.movie;
 
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -12,8 +13,14 @@ public class MovieManager {
     private static ArrayList<Screen> screens;
     private static ArrayList<Customer> customers;
     LocalDateTime now = LocalDateTime.now();
+    LocalTime currentTime = LocalTime.now();
+    DateTimeFormatter formatterDisplay = DateTimeFormatter.ofPattern("HH:mm");
+    // LocalTime currentTime = LocalTime.parse(now(),formatterDisplay); 필요없음
+    // LocalTime currentTime = LocalTime.parse("14:10",formatterDisplay); 필요없음
     DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("MM월 dd일 hh:mm a");
+    // DateTimeFormatter dateFormatDisplay = DateTimeFormatter.ofPattern("HH:mm"); 필요없음
     String formatingDate = now.format(dateFormat);
+    // String formatingDateDisplay = now.format(dateFormatDisplay); 필요없음
     
 
     private static Map<String,Screen> myMovieMap = new HashMap<String,Screen>();
@@ -48,7 +55,14 @@ public class MovieManager {
     }
     public void currentMovieList(){
         System.out.println("===================================예매가능한 영화====================================");
-        
+        for(int i =0; i < screens.size(); i++){  // 스크린에 있는 영화를 돌면서
+            LocalTime MovieTime = LocalTime.parse(screens.get(i).getTime(),formatterDisplay); // 영화 시간 String을 LocalTime 타입으로 형변환
+            if(MovieTime.isAfter(currentTime)){   //  영화 시간이 현재 시간보다 뒤에 있다면
+                System.out.println(screens.get(i));  // 영화 목록을 출력
+            }else{
+                continue;  // 영화 시간이 현재 시간에서 지나갔다면 넘어가
+            }
+        }
         System.out.println("=====================================================================================");
     };
 
@@ -56,9 +70,33 @@ public class MovieManager {
     public void bookMovie() throws InterruptedException {  // 스레드로 늦출거라서 중간에 멈춰도 예외로 처리할 수 있게 해줌
         for(;;){
             currentMovieList();
+            System.out.print("예매할 영화 번호 입력 > ");
+            try {
+                int bookNum = Integer.parseInt(scan.next());
+                if(bookNum > screens.size() || bookNum < 1){
+                    System.out.println("잘못된 입력입니다.");
+                    continue;
+                }
+                System.out.println("선택하신 영화");
+                System.out.println("=====================================================================================");
+                System.out.println(bookNum+ "" +screens.get(bookNum-1));
+                System.out.println("=====================================================================================");
+                Screen choiceMovie = screens.get(bookNum-1);  // 선택한 영화 배열 전체를 choiceMovie에 저장
+                for(int i =0; i < screens.size(); i++){
+                    if( birthDate-now > Integer.parseInt(screens.get(i).getRating().substring(0,2))){
+                        customerInfo(choiceMovie);
 
+                        // birthDate-now 구해야됨
+                }
+            }
+            } catch (Exception e) {
+                // TODO: handle exception
+            }
         }
     }
 
     
 }
+
+// Integer.parseInt(get(i).getRating().substring(0,2)); 
+// 12세이용가의 앞 두글자를 따서 숫자로 형변환
