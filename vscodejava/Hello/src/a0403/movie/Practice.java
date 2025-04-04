@@ -1,8 +1,6 @@
 package a0403.movie;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
+import java.time.DateTimeException;
 import java.util.Scanner;
 
 
@@ -10,18 +8,21 @@ public class Practice {
        
     public static void main(String[] args) {
 
-        Scanner scan = new Scanner(System.in);
-    
-    
-        LocalDateTime now = LocalDateTime.now();
-    DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("MM월 dd일 hh:mm a");
-    String formatingDate = now.format(dateFormat);
+Scanner sc = new Scanner(System.in);
 
-        String openning = "____________________________________________________\n|                                                   |\n|      *   더조은 극장에 오신걸 환영합니다   *      |\n|                                                   |\n|          "+"현재시각 : "+formatingDate+"          |\n|                  \t                            |\n|___________________________________________________|";
-        System.out.print(a);
+        try {
+            System.out.println("입력해라");
+            int a = Integer.parseInt(sc.next());
+            int b = Integer.parseInt(sc.next());
+            System.out.println(a);
+            System.out.println(b);
+            
+        } catch (DateTimeException e) {
+            System.out.println("날짜형식");
+        } 
 
-        
-    }
-}
 
 
+
+
+    }}

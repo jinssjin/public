@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class MovieReservationMain {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
+        FileD fd = new FileD();
         MovieManager mm = new MovieManager();
         // FileD fd = new FileD();
         System.out.println(mm.openning);  //MovieManager 클래스에 있는 openning 출력하기
@@ -33,18 +34,20 @@ public class MovieReservationMain {
                         // TODO: handle exception
                     }
                     break;
-                // case 1:
-                    
-                //     break;
-                // case 1:
-                    
-                //     break;
-                // case 1:
-                    
-                //     break;
-                // case 1:
-                    
-                //     break;
+                case 3:
+                    mm.checkReservation();
+                    break;
+                case 4:
+                    mm.ticketSave();
+                    break;
+                case 5:
+                    fd.upload();
+                    break;
+                case 0:
+                    System.out.println("프로그램을 종료합니다.");
+                    scan.close();
+                    break Outter;
+                
             
                 default:
                     break;

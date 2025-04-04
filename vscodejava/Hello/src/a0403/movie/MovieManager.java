@@ -1,7 +1,10 @@
 package a0403.movie;
 
+import java.time.DateTimeException;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -24,7 +27,7 @@ public class MovieManager {
     
 
     private static Map<String,Screen> myMovieMap = new HashMap<String,Screen>();
-    // private static FileD fd = new FileD();
+    private static FileD fd = new FileD();
     
     public MovieManager(){
         screens = new ArrayList<>();
@@ -55,10 +58,12 @@ public class MovieManager {
     }
     public void currentMovieList(){
         System.out.println("===================================예매가능한 영화====================================");
+        int count = 1;
         for(int i =0; i < screens.size(); i++){  // 스크린에 있는 영화를 돌면서
             LocalTime MovieTime = LocalTime.parse(screens.get(i).getTime(),formatterDisplay); // 영화 시간 String을 LocalTime 타입으로 형변환
             if(MovieTime.isAfter(currentTime)){   //  영화 시간이 현재 시간보다 뒤에 있다면
-                System.out.println(screens.get(i));  // 영화 목록을 출력
+                System.out.println(count+""+screens.get(i));  // 영화 목록을 출력
+                count++;
             }else{
                 continue;  // 영화 시간이 현재 시간에서 지나갔다면 넘어가
             }
@@ -70,33 +75,221 @@ public class MovieManager {
     public void bookMovie() throws InterruptedException {  // 스레드로 늦출거라서 중간에 멈춰도 예외로 처리할 수 있게 해줌
         for(;;){
             currentMovieList();
-            System.out.print("예매할 영화 번호 입력 > ");
+            
             try {
+                System.out.println("예매자 정보를 입력하세요");
+                System.out.print("이름 : ");
+                String name = scan.next();
+                System.out.print("생년월일(6자리) : ");
+                int customerbirthDay = Integer.parseInt(scan.next());
+                int y = customerbirthDay / 10000;
+                int m = (customerbirthDay % 10000) /100;
+                int d = customerbirthDay % 100;
+                if(y > 0 && y <= 25){
+                    y += 2000;
+                }else{
+                    y += 1900;
+                }
+                LocalDate customerbirthDayformat = LocalDate.of(y, m, d);
+                LocalDate currentDate = LocalDate.now();
+                int customerAge = Period.between(customerbirthDayformat,currentDate).getYears();
+                
+                System.out.print("예매할 영화 번호 입력 > ");
                 int bookNum = Integer.parseInt(scan.next());
                 if(bookNum > screens.size() || bookNum < 1){
                     System.out.println("잘못된 입력입니다.");
                     continue;
                 }
+                
                 System.out.println("선택하신 영화");
                 System.out.println("=====================================================================================");
                 System.out.println(bookNum+ "" +screens.get(bookNum-1));
                 System.out.println("=====================================================================================");
-                Screen choiceMovie = screens.get(bookNum-1);  // 선택한 영화 배열 전체를 choiceMovie에 저장
-                for(int i =0; i < screens.size(); i++){
-                    if( birthDate-now > Integer.parseInt(screens.get(i).getRating().substring(0,2))){
-                        customerInfo(choiceMovie);
-
-                        // birthDate-now 구해야됨
+                 Screen choiceMovie = screens.get(bookNum-1);  // 선택한 영화 배열 전체를 choiceMovie에 저장
+                if(customerAge < Integer.parseInt(screens.get(bookNum-1).getRating().substring(0,2))){
+                    System.out.println("연령제한 영화입니다.");
+                }else if(screens.get(bookNum-1).getRating().equals("청소년관람불가")){
+                    if(customerAge < 19){
+                        System.out.println("청소년 관람 불가입니다.");
+                }}else{
+                    Customer c = new Customer(name, customerbirthDay);
+                    System.out.print("결제 비밀번호 : ");
+                    String pw = scan.next();
+                    Customer cS = new Customer(name, customerbirthDay, pw);
+                    customers.add(cS);
                 }
-            }
-            } catch (Exception e) {
-                // TODO: handle exception
+                if(customers != null && !customers.isEmpty()){
+                    String seatNum = Integer.toString(seatSelection(choiceMovie))
+                }catch (NumberFormatException e) {
+
+                    System.out.println("잘못된 입력입니다. 숫자만 입력해주세요");
+                }
+            
+        }
+    }
+
+    private int seatSelection(Screen choiceMovie) {
+        
+    }
+
+    public void checkReservation() {
+        int index = search("예약확인");
+        checkPassword(index);
+    }
+    private void checkPassword(int index) {
+        for(;;){
+            if(index != -1){
+                System.out.print("결제 비밀번호 : ");
+                String searchPw = scan.next();
+                System.out.println();
+                if(customers.get(index).getPw().equals(searchPw)){
+                    System.out.println("비밀번호가 일치합니다.");
+                    System.out.println(ticketPrint(myMovieMap,customers.get(index).getName()));
+                    break;
+                }
             }
         }
     }
 
+    String ticketPrint(Map<String,Screen> myMovieMap, String n) {
+        int index = -1;
+        if(customers != null){
+            for(int i =0; i < customers.size(); i++){
+                if(customers.get(i).getName().equals(n)){
+                    index = i;
+                }
+            }
+        }
+        int seat = Integer.parseInt(customers.get(index).getSeat()+1);
+        return  "ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ\n\n" +
+                 "\t" + n + "님의 티켓정보" +
+                 "| 좌석 : " + seat + "번\n"+
+                 "." + myMovieMap.get(n) + "\n\n" +
+                 "ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ\n\n";
+    }
     
+    public static ArrayList<Screen> getScreens() {
+    return screens;
+    }
+
+    public static Map<String,Screen> getReservationMap() {
+        return myMovieMap;
+    }
+
+    private int search(String str) {
+        System.out.println("===================== " + str + " =====================");
+        System.out.print("예약자 이름 : ");
+        String searchName = scan.next();
+        scan.nextLine();
+        int index = -1;
+        if(customers != null){
+            for(int i=0; i<customers.size(); i++){
+                if(customers.get(i).getName().equals(searchName)){
+                    index = i;
+                }
+            }
+        }
+        return index;
+    }
+    public void ticketSave() {
+        int index = search("티켓조회");
+        checkPassword(index);
+        fd.ticketSaveFile(myMovieMap,customers.get(index).getName());
+    }
 }
+
+
+
+
+    // private void customerInfo(Screen choiceMovie) {
+    //     System.out.println("예매자 정보를 입력하세요");
+    //     System.out.print("이름 : ");
+    //     String name = scan.next();
+    //     System.out.print("생년월일(6자리) : ");
+    //     try {
+    //         int birthDate = Integer.parseInt(scan.next());
+    //         Customer c = new Customer(name, birthDate);
+            
+    //         }
+
+    //     } catch (DateTimeException e) {
+    //         System.out.println("생년월일을 6자리로 입력해주세요 ex)010225");
+    //     }
 
 // Integer.parseInt(get(i).getRating().substring(0,2)); 
 // 12세이용가의 앞 두글자를 따서 숫자로 형변환
+//Integer.parseInt(customers.get(i).getBirthDate().substring(0,2))
+
+
+// boolean membershipSignup = false;
+//         int membershipPoint = 0;
+//         System.out.println("연간회원권에 가입하시겠습니까? (연간회원 영화 50% 할인)");
+//         System.out.print("예(Y)    아니오(N) : ");
+//         String membershipAnswer = scan.next();
+//         if(membershipAnswer.equalsIgnoreCase("y")||membershipAnswer=="예"){
+//             membershipSignup = true;
+//             System.out.println("더조은무비 멤버쉽에 오신걸 환영합니다.");
+//             System.out.println("아래 계좌로 무통장 입금 후 포인트 충전을 완료해주시면 감사하겠습니다.");
+//             System.out.println("더조은 은행 000-0000-00000 (예금주 : 더조은무비)");
+//             System.out.println("충전하실 더조은포인트 금액을 입력해주세요. (연회비는 포인트에서 차감됩니다.)");
+//             System.out.print("충전 포인트(10,000원 이상) >");
+//             try {
+//                 membershipPoint = Integer.parseInt(scan.next());
+//             } catch (NumberFormatException e) {
+//                 System.out.println("잘못된 입력입니다. 숫자만 입력해주세요");
+//             }
+
+// ♡♥만약 오류나면 비회원은 멤버쉽 포인트 0 추가해볼래
+
+// }else if(membershipAnswer.equalsIgnoreCase("n")||membershipAnswer=="아니오"){
+//     membershipSignup = false;
+// }else{
+//     System.out.println("잘못 입력하셨습니다.");
+// }
+
+// try {
+//     int birthDate = Integer.parseInt(scan.next());
+//     Customer c = new Customer(name, birthDate, membershipSignup,membershipPoint);
+    
+//     if(!c.rateTop(c) > Integer.parseInt(screens.get(i).getRating().substring(0,2))){
+//         System.out.println("이 영화는 "+screens.get(bookNum).getRating()+"입니다.");       
+//     }
+
+// } catch (DateTimeException e) {
+//     System.out.println("생년월일을 6자리로 입력해주세요 ex)010225");
+// }
+// }
+
+
+// for(int i=0; i<screens.size();i++){
+                //     if(13 < Integer.parseInt(screens.get(i).getRating().substring(0,2))){
+                //         System.out.println("이 영화는 "+screens.get(bookNum).getRating()+"입니다.");       
+                // }else{
+                    
+                // }
+                
+
+                // for(int i =0; i < screens.size(); i++){
+                //     if( customers.getbirthDate(i)-now > Integer.parseInt(screens.get(i).getRating().substring(0,2))){
+
+// ☆★☆★birthDate-now 구해야됨★☆★☆
+
+// System.out.println("예매자 정보를 입력하세요");
+//                 System.out.print("이름 : ");
+//                 String name = scan.next();
+//                 System.out.print("생년월일(6자리) : ");
+        
+//                 try {
+//                     int birthDate = Integer.parseInt(scan.next());
+//                     Customer c = new Customer(name, birthDate);
+//                     System.out.print("결제 비밀번호 : ");
+//                     String pw = scan.next();
+//                     Customer cS = new Customer(name, birthDate, pw);
+//                     customers.add(cS);
+                    
+//                     } catch (DateTimeException e) {
+//                         System.out.println("생년월일을 6자리로 입력해주세요 ex)010225");
+//                     }
+//                 if(customers != null && !customers.isEmpty()){
+//                     String seatNum = Integer.toString(seatSelection(choiceMovie))
+//                 }
