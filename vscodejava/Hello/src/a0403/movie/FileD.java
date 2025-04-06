@@ -54,7 +54,8 @@ public class FileD {
             while (line != null) {
                 System.out.println(line);
                 String[] screen = line.split("/");
-                MovieManager.getScreens().add(new Screen(screen[0],screen[1],screen[3],screen[4],Integer.parseInt(screen[5])));
+                MovieManager.getScreens().add(new Screen(screen[0],screen[1],screen[2],screen[3],Integer.parseInt(screen[4])));
+                break;
             }
         } catch (FileNotFoundException e) {
             System.out.println("addMonvieList.txt 파일을 찾을 수 없습니다. 경로를 다시 확인해주세요");

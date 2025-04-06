@@ -82,7 +82,8 @@ public class MovieManager {
                 System.out.print("이름 : ");
                 String name = scan.next();
                 System.out.print("생년월일(6자리) : ");
-                int customerbirthDay = Integer.parseInt(scan.next());
+                int customerbirthDay = scan.nextInt();
+                scan.nextLine();
                 int y = customerbirthDay / 10000;
                 int m = (customerbirthDay % 10000) /100;
                 int d = customerbirthDay % 100;
@@ -94,9 +95,9 @@ public class MovieManager {
                 LocalDate customerbirthDayformat = LocalDate.of(y, m, d);
                 LocalDate currentDate = LocalDate.now();
                 int customerAge = Period.between(customerbirthDayformat,currentDate).getYears();
-                
                 System.out.print("예매할 영화 번호 입력 > ");
-                int bookNum = Integer.parseInt(scan.next());
+                int bookNum = scan.nextInt();
+                scan.nextLine();
                 if(bookNum > screens.size() || bookNum < 1){
                     System.out.println("잘못된 입력입니다.");
                     continue;
@@ -107,12 +108,17 @@ public class MovieManager {
                 System.out.println(bookNum+ "" +screens.get(bookNum-1));
                 System.out.println("=====================================================================================");
                  Screen choiceMovie = screens.get(bookNum-1);  // 선택한 영화 배열 전체를 choiceMovie에 저장
-                if(customerAge < Integer.parseInt(screens.get(bookNum-1).getRating().substring(0,2))){
+                 if(screens.get(bookNum-1).getRating().equals("전체이용가")){
+                    Customer c = new Customer(name, customerbirthDay);
+                    System.out.print("결제 비밀번호 : ");
+                    String pw = scan.next();
+                    Customer cS = new Customer(name, customerbirthDay, pw);
+                    customers.add(cS);
+                }else if(screens.get(bookNum-1).getRating().equals("청소년관람불가") && customerAge < 19){
+                    System.out.println("청소년 관람 불가입니다.");
+                 }else if(customerAge < Integer.parseInt(screens.get(bookNum-1).getRating().substring(0,2))){
                     System.out.println("연령제한 영화입니다.");
-                }else if(screens.get(bookNum-1).getRating().equals("청소년관람불가")){
-                    if(customerAge < 19){
-                        System.out.println("청소년 관람 불가입니다.");
-                }}else{
+                }else{
                     Customer c = new Customer(name, customerbirthDay);
                     System.out.print("결제 비밀번호 : ");
                     String pw = scan.next();
@@ -173,6 +179,11 @@ public class MovieManager {
     }
 
     public void checkReservation() {
+        if(customers.isEmpty()){
+            System.out.println("예약된 내역이 없습니다.");
+            System.out.println("===================================================================");
+            return;
+        }
         int index = search("예약확인");
         checkPassword(index);
     }
@@ -232,6 +243,11 @@ public class MovieManager {
         return index;
     }
     public void ticketSave() {
+        if(customers.isEmpty()){
+            System.out.println("예약된 내역이 없습니다.");
+            System.out.println("===================================================================");
+            return;
+        }
         int index = search("티켓조회");
         checkPassword(index);
         fd.ticketSaveFile(myMovieMap,customers.get(index).getName());
