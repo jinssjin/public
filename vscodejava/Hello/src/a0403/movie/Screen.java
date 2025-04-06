@@ -12,6 +12,12 @@ public class Screen {
     private DecimalFormat priceFormat = new DecimalFormat("#,###원");
     private ArrayList<String> seats;
     
+    public ArrayList<String> getSeats() {
+        return seats;
+    }
+    public void setSeats(ArrayList<String> seats) {
+        this.seats = seats;
+    }
     public Screen(String title, String theater, String time, String rating, int price) {
         this.title = title;
         this.theater = theater;
@@ -19,7 +25,7 @@ public class Screen {
         this.rating = rating;
         this.price = price;
         seats = new ArrayList<>();
-        for(int i=0; i<=52; i++){
+        for(int i=1; i<52; i++){
             seats.add(i+"");
         }
         
@@ -64,7 +70,7 @@ public class Screen {
     }
 
     public void seatToString(){
-        for(int i=1; i <seats.size()-3; i+=12){
+        for(int i=0; i < seats.size()-3; i+=12){
             System.out.printf("|  [%2s][%2s][%2s]\t\t[%2s][%2s][%2s][%2s][%2s][%2s]\t[%2s][%2s][%2s]   |\n",seats.get(i),seats.get(i+1),seats.get(i+2),seats.get(i+3),seats.get(i+4),seats.get(i+5),seats.get(i+6),seats.get(i+7),seats.get(i+8),seats.get(i+9),seats.get(i+10),seats.get(i+11),seats.get(i+12));
         }
     }

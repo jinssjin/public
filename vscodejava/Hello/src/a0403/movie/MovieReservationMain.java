@@ -36,7 +36,7 @@ public class MovieReservationMain {
                     break;
                 case 3:
                     mm.checkReservation();
-                    break;
+                    break;    
                 case 4:
                     mm.ticketSave();
                     break;

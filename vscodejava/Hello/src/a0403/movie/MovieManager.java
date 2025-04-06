@@ -8,6 +8,7 @@ import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.InputMismatchException;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -119,7 +120,21 @@ public class MovieManager {
                     customers.add(cS);
                 }
                 if(customers != null && !customers.isEmpty()){
-                    String seatNum = Integer.toString(seatSelection(choiceMovie))
+                    String seatNum = Integer.toString(seatSelection(choiceMovie));
+                    customers.get(customers.size()-1).setSeat(seatNum);
+                    System.out.println("예약중입니다.");
+                    Thread.sleep(2000);
+                    System.out.println("===================================================================");
+                    System.out.println("예약에 성공했습니다.");
+                    System.out.println("["+customers.get(customers.size()-1).getName()+"] 님의 예약정보");
+                    System.out.println(bookNum + "" + choiceMovie);
+                    System.out.println("===================================================================");
+                    System.out.println("잠시후 메인 화면으로 이동합니다.");
+                    Thread.sleep(2000);
+                    myMovieMap.put(customers.get(customers.size()-1).getName(),choiceMovie);
+                    break;
+
+                }
                 }catch (NumberFormatException e) {
 
                     System.out.println("잘못된 입력입니다. 숫자만 입력해주세요");
@@ -128,8 +143,33 @@ public class MovieManager {
         }
     }
 
-    private int seatSelection(Screen choiceMovie) {
-        
+    private int seatSelection(Screen screen) {
+        int seatNum = -1;
+        while (true) {
+            try{
+            System.out.println("===================================================================");
+            screen.seatToString();
+            System.out.println("좌석번호를 선택하세요");
+            System.out.print("선택 > ");
+            int seatIndex = scan.nextInt()-1;
+            scan.nextLine();
+            if(seatIndex+1 < 1 || seatIndex+1 > 52){
+                System.out.println("유효하지않은 선택입니다. 1 ~ 48 사이 선택");
+            }else if(screen.getSeats().get(seatIndex).equals("■■")){
+                System.out.println("이미 선점된 좌석입니다.");
+            }else{
+                screen.getSeats().set(seatIndex,"■■");
+                System.out.println("좌석 선택이 완료되었습니다.");
+                seatNum = seatIndex + 1;
+                break;
+            }
+        }catch(InputMismatchException e) {
+            System.out.println("잘못된 입력입니다.");
+            scan.nextLine();
+        }
+            
+        }
+        return seatNum;
     }
 
     public void checkReservation() {
@@ -160,7 +200,7 @@ public class MovieManager {
                 }
             }
         }
-        int seat = Integer.parseInt(customers.get(index).getSeat()+1);
+        int seat = Integer.parseInt(customers.get(index).getSeat())+1;
         return  "ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ\n\n" +
                  "\t" + n + "님의 티켓정보" +
                  "| 좌석 : " + seat + "번\n"+
@@ -195,6 +235,39 @@ public class MovieManager {
         int index = search("티켓조회");
         checkPassword(index);
         fd.ticketSaveFile(myMovieMap,customers.get(index).getName());
+    }
+
+    String photocardPrint(Map<String,Screen> myMovieMap, String a) {
+        int index = -1;
+        if(customers != null){
+            for(int i =0; i < customers.size(); i++){
+                if(customers.get(i).getName().equals(a)){
+                    index = i;
+                }
+            }
+        }
+        
+        String choiceMovieTittle = myMovieMap.get(a).getTitle();
+        switch (choiceMovieTittle) {
+            case "공포특급":
+             return "       .-`      `-.\n      /            ＼\n     |                |\n     |,  .-.  .-.  ,   |\n     | )(_o/ ＼o_)( |\n     |/     /＼   ＼|\n     (_     ^^   _)\n     ＼__|IIIIII|__/\n       |＼IIIIII/   |\n      ＼          /\n        `--------`\n";
+                
+            case "로비":
+            return "     ________________________\n  |＼＼____________________//|\n  ||     ******    ******       ||\n  ||     ******    ******       ||\n  ||                               ||\n  ||      TOP SECRET         ||\n  ||       CONTRACT         ||\n  ||         ******               ||\n  ||         LOBBY             ||\n  ||                               ||\n  ||   ******       ******      ||\n  ||   ******      ******       ||\n  ||//__________________＼＼||   ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾\n";
+                
+            case "승부":
+            return " ────────────────\n│                                               \n│    ╋╋╋╋╋╋╋╋╋╋╋╋╋╋\n│    ╋○●╋╋●╋╋╋╋╋╋╋╋\n│    ╋╋●╋╋╋╋╋╋╋╋╋╋╋\n│    ╋○○●╋╋╋╋╋╋╋╋╋╋\n│    ╋╋╋●╋○╋╋╋╋╋╋╋╋\n│    ╋╋╋╋╋╋╋╋╋╋╋╋╋╋\n│    ╋○╋╋╋╋╋╋╋╋╋╋╋╋\n│    ╋╋╋╋╋╋╋╋╋╋╋╋╋╋\n│    ╋╋╋╋╋╋╋╋╋╋╋╋╋╋\n│    ╋╋╋╋╋╋╋╋╋╋╋╋╋╋\n";
+                
+            case "세븐틴":
+            return "                      ☆\n                   ☆   ☆\n                 ☆       ☆\n   ☆☆☆☆☆           ☆☆☆☆☆\n     ☆                                ☆\n        ☆     SEVENTEEN     ☆\n           ☆         ☆         ☆\n         ☆        ☆   ☆          ☆\n       ☆    ☆               ☆       ☆\n    ☆  ☆                        ☆  ☆   \n";
+                
+            case "김동하:커넥트":
+            return "˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚\n\n                        CONNECT\n\n˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚˚\n";
+                
+            case "고독한 미식가 더 무비":
+            return "         (\n          )\n     __..---..__\n ,-='  /  |  ＼  `=-.\n:--..___________..--;\n＼.,_____________,./\n";
+        }
+        return "";
     }
 }
 

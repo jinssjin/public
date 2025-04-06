@@ -77,6 +77,7 @@ public class Flight {
         return ". "+"목적지 : " + destination + ", 출발시간 : " + time + ", 가격 : " + priceComma + "]";
     }
 
+    
     public void seatToString(){
         for(int i=0; i < seats.size()-3; i+=4){
             System.out.printf("|  [%2s]\t\t[%2s][%2s] \t  [%2s]   |\n",seats.get(i),seats.get(i+1),seats.get(i+2),seats.get(i+3));

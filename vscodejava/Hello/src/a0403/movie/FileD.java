@@ -9,9 +9,10 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.Buffer;
 import java.util.Map;
+import java.util.Scanner;
 
 public class FileD {
-
+    Scanner scan = new Scanner(System.in);
     private MovieManager mm = new MovieManager();
 
     public void ticketSaveFile(Map<String,Screen> myMap, String name) {
@@ -21,13 +22,19 @@ public class FileD {
             if(!folder.exists()){
                 folder.mkdirs();
                 System.out.println(folderMaking+" 생성 완료");
-            }else{
-                System.out.println("폴더 생성 실패");
-                return;
             }
+            // else{
+            //     System.out.println("폴더 생성 실패");
+            //     return;
+            // }
             File file = new File("d:\\ticket\\ticket.txt");
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file,true));
             if(file.isFile() && file.canWrite()){
+                System.out.println("포토티켓으로 출력하시겠습니까?");
+                System.out.print("예(Y)    아니오(N) : ");
+                String photocardAnswer = scan.nextLine();
+                if(photocardAnswer.equalsIgnoreCase("y")||photocardAnswer.equals("예")){
+                    bufferedWriter.write(mm.photocardPrint(myMap,name));}
                 bufferedWriter.write(mm.ticketPrint(myMap,name));
                 bufferedWriter.flush();
                 System.out.println("티켓 파일 저장 완료 ");
