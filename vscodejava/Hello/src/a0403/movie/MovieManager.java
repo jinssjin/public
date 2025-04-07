@@ -192,14 +192,18 @@ public class MovieManager {
         int cancelIndex = -1;
         cancelIndex = search("예매취소");  // 예매 취소할 자리의 인덱스 번호를 찾아서
         if(cancelIndex >= 0){
-            String returnToIndex = Integer.toString(cancelIndex+1);
-            Screen cancelMovie = myMovieMap.get(customers.get(cancelIndex).getName());
-            cancelMovie.getSeats().set(cancelIndex,returnToIndex);
-            myMovieMap.remove(customers.get(cancelIndex).getName());
-            customers.remove(cancelIndex);
-            System.out.println("예매가 취소되었습니다.");
+            Customer cancelCustomer = customers.get(cancelIndex);  // 예매 내역에서 취소 인덱스를 뽑아와서
+            String cancelName = cancelCustomer.getName();  // 취소 예매 내역에 예매자를 뽑은다음
+            Screen cancelMovie = myMovieMap.get(cancelName);  // 해시맵에 저장된 영화 객체를 뽑은 후
+            int seatIndex = Integer.parseInt(cancelCustomer.getSeat())-1;  // 취소한 예매건의 좌석-1 : 좌석의 인덱스 번호를 추출하여
+            if(seatIndex >= 0 && seatIndex < cancelMovie.getSeats().size()){  // 인덱스 번호의 범위를 if문에 넣고
+                cancelMovie.getSeats().set(seatIndex,Integer.toString(seatIndex+1));  // 좌석의 인덱스 번호에 문자타입으로 바꾼 숫자(인덱스+1)을 넣어주고
+                myMovieMap.remove(cancelName);
+                customers.remove(cancelIndex);
+                System.out.println("예매가 취소되었습니다.");
+            }
         }else{
-            System.out.println("선택하신 차량을 찾을 수 없습니다.");
+            System.out.println("선택하신 영화를 찾을 수 없습니다.");
         }
         
     }
