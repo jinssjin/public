@@ -7,12 +7,13 @@ public class MovieReservationMain {
         Scanner scan = new Scanner(System.in);
         FileD fd = new FileD();
         MovieManager mm = new MovieManager();
+        
         // FileD fd = new FileD();
         System.out.println(mm.openning);  //MovieManager 클래스에 있는 openning 출력하기
 
         Outter:while (true) {
             System.out.println();
-            System.out.println("1. 영화 목록\n2. 영화 예매\n3. 예약 조회\n4. 티켓 저장\n5. 영화목록 업로드 \n0. 종료\n");
+            System.out.println("1. 영화 목록\n2. 영화 예매\n3. 예약 조회\n4. 예매 취소\n5. 티켓 저장\n6. 영화목록 업로드 \n0. 종료\n");
             System.out.print("메뉴선택>");
             String menuStr = scan.next();
             scan.nextLine();
@@ -36,11 +37,14 @@ public class MovieReservationMain {
                     break;
                 case 3:
                     mm.checkReservation();
-                    break;    
+                    break;
                 case 4:
-                    mm.ticketSave();
+                    mm.cancelTicket();
                     break;
                 case 5:
+                    mm.ticketSave();
+                    break;
+                case 6:
                     fd.upload();
                     break;
                 case 0:

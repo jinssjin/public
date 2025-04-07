@@ -187,6 +187,23 @@ public class MovieManager {
         int index = search("예약확인");
         checkPassword(index);
     }
+
+    public void cancelTicket() {
+        int cancelIndex = -1;
+        cancelIndex = search("예매취소");  // 예매 취소할 자리의 인덱스 번호를 찾아서
+        if(cancelIndex >= 0){
+            String returnToIndex = Integer.toString(cancelIndex+1);
+            Screen cancelMovie = myMovieMap.get(customers.get(cancelIndex).getName());
+            cancelMovie.getSeats().set(cancelIndex,returnToIndex);
+            myMovieMap.remove(customers.get(cancelIndex).getName());
+            customers.remove(cancelIndex);
+            System.out.println("예매가 취소되었습니다.");
+        }else{
+            System.out.println("선택하신 차량을 찾을 수 없습니다.");
+        }
+        
+    }
+
     private void checkPassword(int index) {
         for(;;){
             if(index != -1){
@@ -285,6 +302,7 @@ public class MovieManager {
         }
         return "";
     }
+    
 }
 
 
