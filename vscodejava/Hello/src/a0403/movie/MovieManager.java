@@ -191,6 +191,7 @@ public class MovieManager {
     public void cancelTicket() {
         int cancelIndex = -1;
         cancelIndex = search("예매취소");  // 예매 취소할 자리의 인덱스 번호를 찾아서
+        checkPassword(cancelIndex);
         if(cancelIndex >= 0){
             Customer cancelCustomer = customers.get(cancelIndex);  // 예매 내역에서 취소 인덱스를 뽑아와서
             String cancelName = cancelCustomer.getName();  // 취소 예매 내역에 예매자를 뽑은다음
