@@ -2,9 +2,7 @@ package a0408.warehouse;
 
 import java.util.Scanner;
 
-import a0320.prac;
-
-public class AbstrctMenuGoods implements Menu {
+abstract class AbstrctMenuGoods implements Menu {
     
     protected String menuTitle;
     protected Menu homeMenu;
