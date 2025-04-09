@@ -12,8 +12,8 @@ abstract class AbstractMenu implements Menu{
     
   
 
-    protected static final Scanner scanner =new Scanner(System.in);
-
+    protected static final Scanner scanner = new Scanner(System.in);
+    
     public AbstractMenu(String menuText, Menu prevMenu) {
         this.menuText = menuText;
         this.prevMenu = prevMenu;
