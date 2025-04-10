@@ -2,11 +2,7 @@ package a0408.warehouse;
 
 import java.util.Scanner;
 
-<<<<<<< Updated upstream
-abstract class AbstrctMenuGoods implements Menu {
-=======
-public class AbstrctMenuGoods implements Menu {
->>>>>>> Stashed changes
+public abstract class AbstrctMenuGoods implements Menu {
     
     protected String menuTitle;
     protected Menu homeMenu;
