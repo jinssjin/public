@@ -12,8 +12,13 @@ public class MainProgram {
 
     }
 }
+  
 
-interface Menu {  // public을 왜 뺄까 interface를 더 공부해보기
+// 한 파일 안에 public 클래스나 인터페이스는 딱 하나만 가능하다.
+// 그리고 그 이름은 파일 이름과 같아야 한다.
+// package-private : 같은 패키지 내에서만 접근 가능
+
+interface Menu {
     void printTittle();
     Menu next();
     

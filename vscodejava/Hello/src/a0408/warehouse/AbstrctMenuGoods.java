@@ -2,7 +2,11 @@ package a0408.warehouse;
 
 import java.util.Scanner;
 
+<<<<<<< Updated upstream
 abstract class AbstrctMenuGoods implements Menu {
+=======
+public class AbstrctMenuGoods implements Menu {
+>>>>>>> Stashed changes
     
     protected String menuTitle;
     protected Menu homeMenu;
@@ -25,7 +29,5 @@ abstract class AbstrctMenuGoods implements Menu {
         System.out.println("\n"+menuTitle);  // 메뉴 목록 출력하기
     }
     
-    // printTittle 메소드
-
-    
+    // printTittle 메소드    
 }
