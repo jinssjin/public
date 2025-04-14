@@ -47,15 +47,16 @@ public class InOut {
         while ((line = br.readLine()) != null) {  // 라인 하나씩 읽어오기
             String[] temp = line.split(",");  // "/"로 정보를 구분해서 txt파일을 배열에 넣기
             if(inOutgoodsCode.equals(temp[2])){
-                DateTimeFormatter format1 = DateTimeFormatter.ofPattern("yyMMddHHmmss");
-                LocalDateTime inOutCode = LocalDateTime.now();
-                String formattedDate = inOutCode.format(format1);
+                // DateTimeFormatter format1 = DateTimeFormatter.ofPattern("yyMMddHHmmss");
+                // LocalDateTime inOutCode = LocalDateTime.now();
+                // String formattedDate = inOutCode.format(format1);
                 String sort = temp[0];
+                String date = temp[1];
                 String goodsCode = temp[2];  // txt파일에 있는 정보는 애초에 String타입
                 String name = temp[3];  // txt파일에 있는 정보는 애초에 String타입
                 int goodsPrice = Integer.parseInt(temp[4]); // txt파일 정보를 인티제로 변경
                 int amount = Integer.parseInt(temp[5]); // txt파일 정보를 인티제로 변경
-                InOut l = new InOut(sort,formattedDate,goodsCode,name,goodsPrice,amount);
+                InOut l = new InOut(sort,date,goodsCode,name,goodsPrice,amount);
                 inOutlist.add(l);
             }
         }
@@ -74,7 +75,7 @@ public class InOut {
     }
 
     private String toFileString() {
-        return String.format("%s,%s,%s,%s,%d",sort, inOutCode, goodsCode,name,amount);
+        return String.format("%s,%s,%s,%s,%d,%d",sort, inOutCode, goodsCode,name,price,amount);
     }
 
     public static InOut outProducts(String inOutCode) throws IOException {
@@ -100,7 +101,7 @@ public class InOut {
         }
         br.close();
         FileWriter fw = new FileWriter(inOutFile); // FileWriter 객체 생성(덮어쓰기 모드)
-        fw.write(text);
+        fw.write(text+"\n");
         fw.close();
         return outGoods;
 

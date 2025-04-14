@@ -14,7 +14,7 @@ class MainMenu extends AbstrctMenuGoods {
     
     private static final String MAIN_MENU_TEXT =   // MAIN_MENU_TEXT는 static 변수인데, instance도 static으로 선언되어서 둘 다 동시에 static 초기화 시점에 로드된다. 그래서 final을 써줘서 순서를 준다.
     // instance 생성 시 값이 들어가게 해줌 final
-    "1. 상품 입고하기 \n" + "2. 상품 출고하기\n" + "3. 입고상품 조회하기\n" + "4. 관리자 메뉴로 이동\n" + "0: 종료\n\n" + "메뉴를 선택하세요: ";
+    "1. 상품 입고하기\n" + "2. 상품 출고하기\n" + "3. 입고상품 조회하기\n" + "4. 관리자 메뉴로 이동\n" + "0: 종료\n\n" + "메뉴를 선택하세요: ";
 
     private MainMenu(Menu homeMenu){
         super(MAIN_MENU_TEXT,homeMenu);  // AbstrctMenuGoods의 생성자를 호출
@@ -61,15 +61,17 @@ class MainMenu extends AbstrctMenuGoods {
             for(Product p:products){
                 System.out.printf("%s\n",p.toString());
             }
-            System.out.println("입고상품을 선택해주세요");
+            System.out.println("입고 상품코드을 선택해주세요");
             String goodsCode = scan.nextLine();
+            System.out.println("수량을 선택해주세요");
+            int amount = Integer.parseInt(scan.nextLine().trim());
             ArrayList<InOut> inOutlList = InOut.findByCode(goodsCode);
             // Position area = new Position(inOutlList);  // 상품위치 추가할 시
             LocalDateTime makeCode = LocalDateTime.now();
             DateTimeFormatter makeCodeformatter = DateTimeFormatter.ofPattern("yyMMddHHmmss");
             String formattedDate = makeCode.format(makeCodeformatter);
             Product thatP = Product.findByGoosCode(goodsCode);
-            InOut goods = new InOut("입고", formattedDate, thatP.getGoodsCode(), thatP.getName(), thatP.getPrice(), thatP.getAmount());
+            InOut goods = new InOut("입고", formattedDate, thatP.getGoodsCode(), thatP.getName(), thatP.getPrice(), amount);
             goods.save();
             System.out.println("입고처리가 완료되었습니다.");
         } catch (IOException e) {
@@ -99,7 +101,7 @@ class MainMenu extends AbstrctMenuGoods {
             try {
                 ArrayList<Product> products = Product.listup();
                 for (Product p : products) {
-                    System.out.printf("(%s) %s [%d]  // %b",p.getGoodsCode(),p.getName(),p.getPrice(),p.isTaxFree());
+                    System.out.printf("(%s) %s [%d]  // %b\n",p.getGoodsCode(),p.getName(),p.getPrice(),p.isTaxFree());
                 }
                 System.out.print("조회할 상품 코드를 입력하세요: ");
                 String goodsCode = scan.nextLine();

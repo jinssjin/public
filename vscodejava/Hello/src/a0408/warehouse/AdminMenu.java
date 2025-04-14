@@ -37,14 +37,15 @@ public class AdminMenu extends AbstrctMenuGoods{  // 관리자 메뉴로 기존 
     }
 
     private void creatGoods() {
+        
         System.out.println("===== <상품 등록> =====");
         System.out.println("설명 : 상품코드는 거래처이름+순서로 부여");
-        System.out.println("상품코드 : ");
+        System.out.print("상품코드 : ");
         String goodsCode = scan.nextLine();
-        System.out.println("상품명 : ");
+        System.out.print("상품명 : ");
         String name = scan.nextLine();
-        System.out.println("단가 : ");
-        int price = scan.nextInt();
+        System.out.print("단가 : ");
+        int price = Integer.parseInt(scan.nextLine().trim());
         System.out.println("과세(1) 혹은 면세(2)");
         String tax = scan.nextLine();
         if(tax.equals("과세") || tax.equals("1")){
@@ -58,6 +59,7 @@ public class AdminMenu extends AbstrctMenuGoods{  // 관리자 메뉴로 기존 
         Product productList = new Product(goodsCode, name, price, true);  // boolean taxFree = true; 과세, 세금계산서 발급 시 필요
         try {
             productList.saveList();
+            System.out.println("상품이 등록되었습니다.");
         } catch (IOException e) {
             System.out.println("파일 저장에 실패하였습니다.");
         }

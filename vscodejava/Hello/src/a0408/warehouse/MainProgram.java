@@ -9,7 +9,6 @@ public class MainProgram {
             menu.printTittle();  // 현재 메뉴을 출력하는 메소드
             menu = menu.next();  // 메뉴 시스템에서 입력받아 다음메뉴를 넣어줌 위 구문 반복
         }
-
     }
 }
   

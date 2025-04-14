@@ -61,7 +61,7 @@ public class Product {
 // 새로운 상품 리스트 등록 메서드 (추가 쓰기)
     public void saveList() throws IOException {
         FileWriter fw = new FileWriter(productFile,true);  // 이어쓰기 on, 추기해야되니까
-        fw.write(this.toFileString()+"\n\n"); // toFileString()메서드 네가지 정보 쓰고 한줄 띄고 열기
+        fw.write(this.toFileString()+"\n"); // toFileString()메서드 네가지 정보 쓰고 한줄 띄고 열기
         fw.close(); // 파일라이터 닫기
     }
 
@@ -73,7 +73,7 @@ public class Product {
 // 시스템 상에 출력되는 양식
     @Override
     public String toString() {
-        return String.format("(%s) %s [%d]  // %b \n",goodsCode,name,price,taxFree);
+        return String.format("(%s) %s [%d원]  // %b\n",goodsCode,name,price,taxFree);
     }
 
 // 상품 리스트 조회 메서드 (읽어오기)
