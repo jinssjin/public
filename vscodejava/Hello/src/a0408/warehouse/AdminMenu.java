@@ -18,16 +18,17 @@ public class AdminMenu extends AbstrctMenuGoods{  // 관리자 메뉴로 기존 
 
     @Override
     public Menu next() { // 메뉴 출력 메소드를 출력
-        if(Integer.parseInt(scan.nextLine()) == 1){  // 추상클래스에서 스캐너 객체를 선언해서 쓸 수 있음
+        int choiceNum = Integer.parseInt(scan.nextLine());
+        if(choiceNum == 1){  // 추상클래스에서 스캐너 객체를 선언해서 쓸 수 있음
             creatGoods();
-            return next(); 
-        }else if(Integer.parseInt(scan.nextLine()) == 2){
+            return this; 
+        }else if(choiceNum == 2){
             deleteGoods();
-            return next();
-        }else if(Integer.parseInt(scan.nextLine()) == 3){
+            return this;
+        }else if(choiceNum == 3){
             printGoodsList();
-            return next();
-        }else if(Integer.parseInt(scan.nextLine()) == 0){
+            return this;
+        }else if(choiceNum == 0){
             return homeMenu;
         }else {
             System.out.println("잘못된 입력입니다. 1~3 중 다시 입력해주세요. 홈으로 다시 돌아가기를 원하시면 0번을 눌러주세요");
@@ -49,14 +50,14 @@ public class AdminMenu extends AbstrctMenuGoods{  // 관리자 메뉴로 기존 
         System.out.println("과세(1) 혹은 면세(2)");
         String tax = scan.nextLine();
         if(tax.equals("과세") || tax.equals("1")){
-            boolean taxFree = true;
+            tax = "과세";
         }else if(tax.equals("면세") || tax.equals("2")){
-            boolean taxFree = false;
+            tax = "면세";
         }else{
             System.out.println("잘못된 입력입니다.");
             return;
         }
-        Product productList = new Product(goodsCode, name, price, true);  // boolean taxFree = true; 과세, 세금계산서 발급 시 필요
+        Product productList = new Product(goodsCode, name, price, tax);  // boolean taxFree = true; 과세, 세금계산서 발급 시 필요 => String으로 교체
         try {
             productList.saveList();
             System.out.println("상품이 등록되었습니다.");

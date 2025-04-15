@@ -38,7 +38,7 @@ class MainMenu extends AbstrctMenuGoods {
             case "4":
                 if(!checkingpassword()) {
                     System.out.println("! 비밀번호를 확인하여주세요 !");
-                    return next();
+                    return this;
                 }
                 AdminMenu adminMenu = AdminMenu.getInstance();
                 adminMenu.setHomeMenu(instance); // instance는 this로 대체가능 // 싱글톤 유일한 객체기 때문에 
@@ -101,7 +101,7 @@ class MainMenu extends AbstrctMenuGoods {
             try {
                 ArrayList<Product> products = Product.listup();
                 for (Product p : products) {
-                    System.out.printf("(%s) %s [%d]  // %b\n",p.getGoodsCode(),p.getName(),p.getPrice(),p.isTaxFree());
+                    System.out.printf("(%s) %s [%d]  // %s\n",p.getGoodsCode(),p.getName(),p.getPrice(),p.getTaxFree());
                 }
                 System.out.print("조회할 상품 코드를 입력하세요: ");
                 String goodsCode = scan.nextLine();
