@@ -72,6 +72,7 @@ public class AdminMenu extends AbstrctMenuGoods{  // 관리자 메뉴로 기존 
         System.out.println("삭제할 상품코드를 선택하세요");
         try {
             Product.deleteGoodsList(scan.nextLine());
+            System.out.println("상품을 삭제하였습니다.");
         } catch (IOException e) {
             System.out.println("삭제 실패");
         }
