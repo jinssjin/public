@@ -85,11 +85,12 @@ public class InOut {
         String line = null;
         while ((line = br.readLine())!=null) {
             String [] temp = line.split(",");
-            if(inOutCode.equals(temp[2])){
-                    DateTimeFormatter format2 = DateTimeFormatter.ofPattern("yyMMddHHmmss");
-                    LocalDateTime currentTime = LocalDateTime.now();
-                    String formattedDate = currentTime.format(format2);
+            if(inOutCode.equals(temp[1])){
+                    // DateTimeFormatter format2 = DateTimeFormatter.ofPattern("yyMMddHHmmss");
+                    // LocalDateTime currentTime = LocalDateTime.now();
+                    // String formattedDate = currentTime.format(format2);
                     String sort = temp[0];
+                    String formattedDate = temp[1]; 
                     String goodsCode = temp[2];  // txt파일에 있는 정보는 애초에 String타입
                     String name = temp[3];  // txt파일에 있는 정보는 애초에 String타입
                     int goodsPrice = Integer.parseInt(temp[4]); // txt파일 정보를 인티제로 변경
@@ -101,7 +102,7 @@ public class InOut {
         }
         br.close();
         FileWriter fw = new FileWriter(inOutFile); // FileWriter 객체 생성(덮어쓰기 모드)
-        fw.write(text+"\n");
+        fw.write(text+"\n".trim());
         fw.close();
         return outGoods;
 

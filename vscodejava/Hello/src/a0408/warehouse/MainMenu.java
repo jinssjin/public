@@ -92,6 +92,7 @@ class MainMenu extends AbstrctMenuGoods {
                     }
                 }catch(IOException e){
                     System.out.println("파일 읽기에 실패했습니다");
+                    e.getMessage();
                 }
            }
 
