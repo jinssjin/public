@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>모카클래스 - 슬기로운 취미 생활</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- bxSlider -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+
+    <!-- Font Awesome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <style>
+        .slider img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+
+<!-- 네비게이션 -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#"><img src="HobbyMe logo.png" alt="로고" style="width: 150px; height: 50px;"></a>
+</nav>
+
+<!-- bxSlider 슬라이더 -->
+<div class="container my-4">
+    <ul class="bxslider slider">
+        <li><img src="kakao.jpg" alt="카카오톡"></li>
+        <li><img src="bat.jpg" alt="배드민턴"></li>
+        <li><img src="cook.jpg" alt="쿠킹 클래스"></li>
+    </ul>
+</div>
+
+<!-- 인기 클래스 카드 -->
+<div class="container">
+    <h2 class="text-center mb-4">인기 클래스</h2>
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="candle.jpg" class="card-img-top" alt="캔들 공예">
+                <div class="card-body">
+                    <h5 class="card-title">캔들 공예 클래스</h5>
+                    <p class="card-text">향기로운 나만의 캔들을 만들어보세요!</p>
+                    <a href="#" class="btn btn-primary">자세히 보기</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="yoga.jpg" class="card-img-top" alt="요가">
+                <div class="card-body">
+                    <h5 class="card-title">힐링 요가 클래스</h5>
+                    <p class="card-text">몸과 마음을 힐링하는 요가 수업입니다.</p>
+                    <a href="#" class="btn btn-primary">자세히 보기</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="flower.jpg" class="card-img-top" alt="플라워 클래스">
+                <div class="card-body">
+                    <h5 class="card-title">플라워 클래스</h5>
+                    <p class="card-text">감성 가득한 꽃꽂이 체험.</p>
+                    <a href="#" class="btn btn-primary">자세히 보기</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 푸터 -->
+<footer class="bg-dark text-white text-center py-3 mt-5">
+    <p>&copy; 2025 더조은. All rights reserved.</p>
+</footer>
+
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+        $('.bxslider').bxSlider({
+            auto: true,
+            pause: 4000,
+            // mode: 'fade',
+            captions: true
+        });
+    });
+</script>
+
+</body>
+</html>
