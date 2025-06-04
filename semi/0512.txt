@@ -1,0 +1,209 @@
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<%@ page import="java.util.*"%>
+
+<script type="text/javascript">
+	function checkForm() {
+		if ("${sessionId}" === "") {
+			alert("로그인 해주세요.");
+			return false;
+		}
+		window.location.href = "./BoardWriteForm.do";
+	}
+</script>
+
+<%
+String sessionId = (String) session.getAttribute("sessionId");
+%>
+
+<c:set var="sessionId" value="${sessionScope.sessionId}" />
+
+
+<div class="py-3 text-end">
+					<c:choose>
+						<c:when test="${not empty sessionId}">
+							<a href="javascript:void(0);" onclick="checkForm();"
+								class="btn btn-primary">글쓰기</a>
+						</c:when>
+						<c:otherwise>
+							<a href="login.jsp" class="btn btn-secondary">로그인 후 글쓰기</a>
+						</c:otherwise>
+					</c:choose>
+				</div>.
+
+
+
+INSERT INTO Post 
+(user_id, title, content, category, tag, created_date, end_date, reservation_date, location, people, price, thumbnail, images, deleted, board_like) 
+VALUES
+('apple', '등산 같이 가실 분~', '이번 주말에 북한산 등산 가실 분 구합니다!', '야외활동', '등산', '2025-05-10', '2025-05-12', '2025-05-11', '서울 북한산', 4, 0, 'thumb1.jpg', 'img1.jpg,img2.jpg', 'N', 0);
+
+
+
+INSERT INTO Post 
+(user_id, title, content, category, tag, created_date, end_date, reservation_date, location, people, price, thumbnail, images, deleted, board_like) 
+VALUES
+('apple', '등산 같이 가실 분~', '이번 주말에 북한산 등산 가실 분 구합니다!', '야외활동', '등산', '2025-05-10', '2025-05-12', '2025-05-11', '서울 북한산', 4, 0, 'thumb1.jpg', 'img1.jpg,img2.jpg', 'N', 0);
+
+INSERT INTO user (user_num, user_id, password, name, phone, address, gender, age, classes, deleted) VALUES (null, "apple","사과","010-9012-3456","대구광역시","W","22","U","N");
+
+
+
+12:38:29	drop table user	Error Code: 3730. Cannot drop table 'user' referenced by a foreign key constraint 'post_ibfk_1' on table 'post'.	0.000 sec
+
+
+<a
+							href="./reservationAction.do?pageNum=${pageNum}"
+							class="btn btn-warning">예약하기</a>
+
+
+
+
+
+
+    <script type="text/javascript">
+        function checkForm() {
+            if ("${empty sessionScope.loginUser}") {
+                alert("로그인 해주세요.");
+                return false;
+            }
+            window.location.href = "./reservationAction.do";
+        }
+    </script>
+
+<%-- 로그인 체크: loginUser 없으면 로그인 페이지로 리다이렉트 --%>
+<c:if test="${empty sessionScope.loginUser}">
+    <c:redirect url="/login/login.jsp" />
+</c:if>
+
+<%-- board 객체가 없으면 에러 페이지로 이동 --%>
+<c:if test="${empty requestScope.board}">
+    <c:redirect url="errorPage.jsp" />
+</c:if>
+
+<c:set var="board" value="${requestScope.board}" />
+<c:set var="loginUser" value="${sessionScope.loginUser}" />
+<c:set var="pageNum" value="${param.pageNum}" />
+
+
+
+                <!-- 썸네일 -->
+                <div class="mb-3 row">
+                    <div class="col-sm-3">
+                        <img src="<c:url value='./images/${board.thumbnail}' />" alt="썸네일 이미지" class="img-fluid">
+                    </div>
+                </div>
+
+                <!-- 제목 -->
+                <div class="mb-3 row">
+                    <div class="col-sm-5">
+                        <h3>${board.title}</h3>
+                    </div>
+                </div>
+
+                <!-- 클래스 일정 -->
+                <div class="p-5 mb-4 bg-body-tertiary rounded-3">
+                    <div class="container-fluid py-5">
+                        <h3 class="display-5 fw-bold">클래스 일정</h3>
+                        <p class="col-md-8 fs-4">ReservationInfo</p>
+                    </div>
+                </div>
+
+                <!-- 위치정보 -->
+                <div class="mb-3 row">
+                    <label class="col-sm-2 control-label">모임장소</label>
+                    <div class="col-sm-6">
+                        <p>${board.location}</p>
+                    </div>
+                </div>
+
+                <!-- 모임시간 -->
+                <div class="mb-3 row">
+                    <label class="col-sm-2 control-label">모임시간</label>
+                    <div class="col-sm-4">
+                        <p>${board.end_date}</p>
+                    </div>
+                </div>
+
+                <!-- 결제자 정보 출력 -->
+                <div class="mb-3 row">
+                    <label class="col-sm-2 control-label">이름</label>
+                    <div class="col-sm-6">
+                        <p>${loginUser.name}</p>
+                    </div>
+                </div>
+
+                <div class="mb-3 row">
+                    <label class="col-sm-2 control-label">전화번호</label>
+                    <div class="col-sm-6">
+                        <p>${loginUser.phone}</p>
+                    </div>
+                </div>
+
+                <div class="mb-3 row">
+                    <label class="col-sm-2 control-label">주소</label>
+                    <div class="col-sm-6">
+                        <p>${loginUser.address}</p>
+                    </div>
+                </div>
+
+                <!-- 예약 버튼 -->
+                <div class="text-center mt-4">
+                    <button type="submit" class="btn btn-success">예약하기</button>
+                </div>
+
+
+<%            
+               int sum = 0;
+               ArrayList<BoardDTO> boardList = (ArrayList<BoardDTO>) session.getAttribute("boardList");
+               if (boardList == null)
+            	   boardList = new ArrayList<BoardDTO>();
+
+               for (int i = 0; i < boardList.size(); i++) { // 상품리스트 하나씩 출력하기
+            	   BoardDTO board = boardList.get(i);
+                  int total = board.getUnitPrice() * book.getQuantity();
+                  sum = sum + total;
+            %>
+
+
+<table class="table table-hover">
+            <form name="reservationClass"
+                  action="reservationAction.do?post_num=${board.post_num}&pageNum=${pageNum}"
+                  method="post">
+
+           <!-- 예약정보 -->
+				<tr>
+					<th></th>
+               		<th></th>
+               </tr>
+               
+               <%            
+               int sum = 0;
+               ArrayList<BoardDTO> boardList = (ArrayList<BoardDTO>) session.getAttribute("boardList");
+               if (boardList == null)
+            	   boardList = new ArrayList<BoardDTO>();
+
+               for (int i = 0; i < boardList.size(); i++) { // 상품리스트 하나씩 출력하기
+            	   BoardDTO board = boardList.get(i);
+                  int total = board.getPrice() * board.getPeople();
+                  sum = sum + total;
+            %>
+
+			<tr>
+	           <!-- 썸네일 -->
+	            <td><img src='./img/card_run.jpg' alt='썸네일 사진'></td>
+	
+	            <!-- 제목 -->
+	            <td><%=board.getTitle()%></td>
+            <% 
+            	} 
+            %>
+		</table>
+
+
+        <div class="row align-items-md-stretch text-center">
+            <form name="newUpdate" action="BoardUpdateAction.do?post_num=${board.post_num}&pageNum=${pageNum}" method="post">
+                <!-- 아이디 -->
+                <div class="mb-3 row">
+                    <label class="col-sm-2 control-label">아이디</label>
